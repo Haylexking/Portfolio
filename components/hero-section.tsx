@@ -22,15 +22,15 @@ export default function HeroSection() {
               <div className="relative lg:hidden">
                 <div className="relative w-full max-w-sm mx-auto">
                   <Image
-                    src="/placeholder.svg?height=600&width=500"
-                    alt="Alexander Akerele - UX Designer"
+                    src="\images\haylex-imagery.png"
+                    alt="Alexander Akerele - UI/UX Designer"
                     width={500}
                     height={600}
                     className="rounded-2xl object-cover w-full h-auto"
                     priority
                   />
                   <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 bg-white/10 backdrop-blur-sm rounded-lg px-2 sm:px-3 py-1 sm:py-2">
-                    <p className="text-white text-xs sm:text-sm font-medium font-body">Haylee Imagery</p>
+                    <p className="text-white text-xs sm:text-sm font-medium font-body">The Biochemist UX 🦄</p>
                   </div>
                 </div>
               </div>
@@ -59,15 +59,15 @@ export default function HeroSection() {
           <div className="relative hidden lg:block">
             <div className="relative w-full max-w-sm sm:max-w-md mx-auto">
               <Image
-                src="/placeholder.svg?height=600&width=500"
-                alt="Alexander Akerele - UX Designer"
+                src="\images\haylex-imagery.png"
+                alt="Alexander Akerele - UI/UX Designer"
                 width={500}
                 height={600}
                 className="rounded-2xl object-cover w-full h-auto"
                 priority
               />
               <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 bg-white/10 backdrop-blur-sm rounded-lg px-2 sm:px-3 py-1 sm:py-2">
-                <p className="text-white text-xs sm:text-sm font-medium font-body">Haylee Imagery</p>
+                <p className="text-white text-xs sm:text-sm font-medium font-body">The Biochemist UX 🦄</p>
               </div>
             </div>
           </div>

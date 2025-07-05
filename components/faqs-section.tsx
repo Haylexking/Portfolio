@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "How can I contact you for a project?",
     answer:
-      "You can reach out through the contact form on this website, send me an email directly, or connect with me on LinkedIn. I prefer to start with a brief conversation about your project goals and requirements before moving forward with a detailed proposal.",
+      "Simply click the 'Get in Touch' button below, or email me directly at alexakerele24@gmail.com. I look forward to hearing from you!",
   },
 ]
 
