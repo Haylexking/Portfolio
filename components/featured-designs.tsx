@@ -16,6 +16,46 @@ export default function FeaturedDesigns() {
         </div>
 
         <div className="space-y-12 sm:space-y-16">
+          {/* Onamini Case Study */}
+          <div className="bg-gradient-to-br from-[#5E17EB] to-purple-800 rounded-3xl p-8 lg:p-12">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div>
+                  <div className="mb-4">
+                    <SectionTag className="bg-emerald-800/50 text-emerald-100 border-emerald-600">UI/UX Case Study</SectionTag>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 font-title">Onamini</h3>
+                  <p className="text-white/90 text-lg leading-relaxed font-body">
+                    Designed a comprehensive platform connecting companies with top-tier talent through trust-focused verification and AI-driven matching. Explore how the ecosystem bridges the gap between flexibility and trust.
+                  </p>
+                </div>
+                <a href="/portfolio/onamini" className="mt-6 block">
+                  <Button
+                    variant="outline"
+                    className="bg-white text-gray-800 hover:bg-gray-100 border-white font-title"
+                  >
+                    View Case Study
+                  </Button>
+                </a>
+              </div>
+
+              <div className="relative">
+                <div className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 overflow-hidden">
+                  {/* Smart fitting: zoom to fill, align left */}
+                  <div className="aspect-video bg-white rounded-2xl overflow-hidden border-2 border-white">
+                    <Image
+                      src="/images/onamini-mockup.png"
+                      alt="Onamini Project Mockup"
+                      width={600}
+                      height={400}
+                      className="w-full h-full object-cover object-[left_top]"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* iDonate Case Study */}
           <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 overflow-hidden relative">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
@@ -49,7 +89,6 @@ export default function FeaturedDesigns() {
 
               <div className="relative order-1 lg:order-2">
                 <div className="rounded-2xl sm:rounded-3xl shadow-2xl max-w-xs sm:max-w-md mx-auto transform hover:scale-105 transition-transform duration-300 overflow-hidden">
-                  {/* Smart fitting: zoom to fill space, align left */}
                   <div className="aspect-video bg-white rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white">
                     <Image
                       src="/images/idonate-mockup.png"
@@ -100,50 +139,6 @@ export default function FeaturedDesigns() {
                     <Image
                       src="/images/ondo-state-mockup.png"
                       alt="Ondo State Ministry Project Mockup"
-                      width={600}
-                      height={400}
-                      className="w-full h-full object-cover object-left"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Kukeat Case Study */}
-          <div className="bg-gradient-to-br from-green-600 to-teal-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12">
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-              <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="mb-3 sm:mb-4">
-                    <SectionTag className="bg-green-800/50 text-green-100 border-green-600">Case Study</SectionTag>
-                  </div>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-title">Kukeat</h3>
-                  <p className="text-green-100 text-base sm:text-lg leading-relaxed font-body">
-                    Designed a seamless foodstuff ordering platform that lets users order from the market with ease and
-                    receive speedy home deliveries. Discover how the design enhances user convenience and streamlines
-                    the ordering process.
-                  </p>
-                </div>
-
-                <div className="pt-2 sm:pt-4">
-                  <a href="https://kukeat.com" target="_blank" rel="noopener noreferrer">
-                    <Button
-                      variant="outline"
-                      className="bg-white text-green-800 hover:bg-green-50 border-white font-title"
-                    >
-                      View Website
-                    </Button>
-                  </a>
-                </div>
-              </div>
-
-              <div className="relative order-1 lg:order-2">
-                <div className="rounded-2xl sm:rounded-3xl shadow-2xl max-w-xs sm:max-w-md mx-auto transform hover:scale-105 transition-transform duration-300 overflow-hidden">
-                  <div className="aspect-video bg-white rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white">
-                    <Image
-                      src="/images/kukeat-mockup.png"
-                      alt="Kukeat Project Mockup"
                       width={600}
                       height={400}
                       className="w-full h-full object-cover object-left"

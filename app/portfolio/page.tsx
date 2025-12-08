@@ -8,6 +8,18 @@ import Image from "next/image"
 
 const projects = [
   {
+    id: "onamini",
+    title: "Onamini",
+    subtitle: "UI/UX Case Study",
+    description:
+      "Designed a comprehensive platform connecting companies with top-tier talent through trust-focused verification and AI-driven matching. Explore how the ecosystem bridges the gap between flexibility and trust.",
+    buttonText: "View Case Study",
+    buttonLink: "/portfolio/onamini",
+    gradient: "from-emerald-600 to-teal-800",
+    tagColor: "bg-emerald-800/50 text-emerald-100 border-emerald-600",
+    mockupImage: "/images/onamini-mockup.png",
+  },
+  {
     id: "idonate",
     title: "iDonate",
     subtitle: "Case Study",
@@ -63,6 +75,7 @@ const projects = [
     tagColor: "bg-green-800/50 text-green-100 border-green-600",
     mockupImage: "/images/burlux-mockup.png",
   },
+
 ]
 
 const skills = [
@@ -107,7 +120,7 @@ const skills = [
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-900" >
       <Header />
 
       <main className="text-white">
@@ -146,7 +159,7 @@ export default function PortfolioPage() {
                         <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 font-title">{project.title}</h3>
                         <p className="text-white/90 text-lg leading-relaxed font-body">{project.description}</p>
                       </div>
-                      <a href={project.buttonLink} target="_blank" rel="noopener noreferrer"  className="mt-6 block">
+                      <a href={project.buttonLink} target="_blank" rel="noopener noreferrer" className="mt-6 block">
                         <Button
                           variant="outline"
                           className="bg-white text-gray-800 hover:bg-gray-100 border-white font-title"
@@ -177,7 +190,7 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-       {/* Skills Section with Focus Hover Effect */}
+        {/* Skills Section with Focus Hover Effect */}
         <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-left font-title">Skills</h2>
@@ -209,6 +222,6 @@ export default function PortfolioPage() {
         {/* Contact Section */}
         <ContactSection />
       </main>
-    </div>
+    </div >
   )
 }
