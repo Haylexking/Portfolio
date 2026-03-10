@@ -56,32 +56,29 @@ export default function FeaturedDesigns() {
             </div>
           </div>
 
-          {/* iDonate Case Study */}
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 overflow-hidden relative">
+          {/* Dammy's Daycare Case Study */}
+          <div className="bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 overflow-hidden relative">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
               <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
                 <div className="space-y-4 sm:space-y-6">
                   <div className="mb-3 sm:mb-4">
-                    <SectionTag className="bg-blue-800/50 text-blue-100 border-blue-600">Case Study</SectionTag>
+                    <SectionTag className="bg-pink-800/50 text-pink-100 border-pink-600">Landing Page</SectionTag>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-title">iDonate</h3>
-                  <p className="text-blue-100 text-base sm:text-lg leading-relaxed font-body">
-                    An online items-only charity platform that connects people and promotes shared living amongst
-                    thriving communities
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-title">Dammy's Daycare</h3>
+                  <p className="text-pink-100 text-base sm:text-lg leading-relaxed font-body">
+                    Designed a clean, engaging landing page for Dammy's Daycare child flow, focusing on clear communication and user trust.
                   </p>
                 </div>
 
                 <div className="pt-2 sm:pt-4">
                   <a
-                    href="https://behance.net/gallery/152008977/iDonate-App-Case-Study"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/portfolio/dammys-daycare"
                   >
                     <Button
                       variant="outline"
-                      className="bg-white text-blue-800 hover:bg-blue-50 border-white font-title"
+                      className="bg-white text-pink-800 hover:bg-pink-50 border-white font-title"
                     >
-                      View Case Study
+                      View Project
                     </Button>
                   </a>
                 </div>
@@ -91,8 +88,8 @@ export default function FeaturedDesigns() {
                 <div className="rounded-2xl sm:rounded-3xl shadow-2xl max-w-xs sm:max-w-md mx-auto transform hover:scale-105 transition-transform duration-300 overflow-hidden">
                   <div className="aspect-video bg-white rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white">
                     <Image
-                      src="/images/idonate-mockup.png"
-                      alt="iDonate Project Mockup"
+                      src="https://designs.magicpath.ai/og/components/gentle-sky-7167"
+                      alt="Dammy's Daycare Project Mockup"
                       width={600}
                       height={400}
                       className="w-full h-full object-cover object-left"

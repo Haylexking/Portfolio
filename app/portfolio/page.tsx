@@ -20,6 +20,17 @@ const projects = [
     mockupImage: "/images/onamini-mockup.png",
   },
   {
+    id: "dammys-daycare",
+    title: "Dammy's Daycare",
+    description:
+      "Designed a clean, engaging landing page for Dammy's Daycare, a component created with MagicPath. Explore how design elements support clear communication and user trust.",
+    buttonText: "View Project",
+    buttonLink: "/portfolio/dammys-daycare",
+    gradient: "from-pink-500 to-rose-600",
+    tagColor: "bg-pink-800/50 text-pink-100 border-pink-600",
+    mockupImage: "https://designs.magicpath.ai/og/components/gentle-sky-7167",
+  },
+  {
     id: "idonate",
     title: "iDonate",
     subtitle: "Case Study",
