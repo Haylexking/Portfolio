@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 
 export default function DammysDaycareCaseStudy() {
   return (
@@ -121,7 +121,7 @@ export default function DammysDaycareCaseStudy() {
               <img
                 alt="Homepage of Dammy's Daycare website showing the hero section with sky blue background, welcoming headline, and call-to-action buttons"
                 className="w-full object-cover"
-                src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&q=80&w=1400"
+                src="/dammys-contact.png"
               />
               <figcaption className="sr-only">
                 Homepage of Dammy's Daycare website showing the hero section
