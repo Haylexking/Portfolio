@@ -10,14 +10,14 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-gray-900 text-white">
+    <header className="bg-[#f0f0f0]/90 backdrop-blur-[14px] text-[#272525] border-b border-[#e4e4e0] sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
           <Logo />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/portfolio" className="hover:text-gray-300 transition-colors">
+            <Link href="/portfolio" className="text-[#69666e] hover:text-[#272525] font-medium transition-colors">
               Portfolio
             </Link>
             <a
@@ -25,7 +25,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" className="bg-white text-gray-900 hover:bg-gray-100">
+              <Button variant="outline" className="bg-[#72d560] text-[#272525] hover:opacity-85 border-[#3ba229] font-bold">
                 Resume
               </Button>
             </a>
@@ -41,7 +41,7 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden pb-6">
             <nav className="flex flex-col space-y-4">
-              <Link href="/portfolio" className="hover:text-gray-300 transition-colors">
+              <Link href="/portfolio" className="text-[#69666e] hover:text-[#272525] font-medium transition-colors">
                 Portfolio
               </Link>
               <a
@@ -49,7 +49,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" className="bg-white text-gray-900 hover:bg-gray-100 w-fit">
+                <Button variant="outline" className="bg-[#72d560] text-[#272525] hover:opacity-85 border-[#3ba229] font-bold w-fit">
                   Resume
                 </Button>
               </a>

@@ -7,7 +7,7 @@ import SectionTag from "./section-tag"
 
 export default function ContactSection() {
   return (
-    <section className="bg-gray-900 text-white py-12 sm:py-16 lg:py-24">
+    <section className="bg-[#f0f0f0] border-t border-[#e4e4e0] text-[#272525] py-12 sm:py-16 lg:py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8 sm:space-y-10">
           <div className="space-y-6 sm:space-y-8">
@@ -17,7 +17,7 @@ export default function ContactSection() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-title px-4">
               Let's Create Something Great Together!
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto font-body px-4">
+            <p className="text-base sm:text-lg lg:text-xl text-[#69666e] leading-relaxed max-w-2xl mx-auto font-body px-4">
               Have a project in mind or just want to say hello? Reach out, and let's bring your ideas to life. I'm
               excited to collaborate and turn your vision into reality.
             </p>
@@ -28,7 +28,7 @@ export default function ContactSection() {
             <a href="mailto:alexakerele24@gmail.com">
               <Button
                 size="lg"
-                className="bg-white text-gray-900 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium font-title"
+                className="bg-[#72d560] text-[#272525] hover:opacity-85 border border-[#3ba229] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold font-title"
               >
                 Get In Touch
               </Button>
@@ -41,7 +41,7 @@ export default function ContactSection() {
                 href="https://twitter.com/Halexhanderkinglin"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-white border border-[#e4e4e0] text-[#69666e] shadow-sm rounded-full flex items-center justify-center hover:text-[#272525] hover:border-[#272525] transition-all"
                 aria-label="Twitter"
               >
                 <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -50,14 +50,14 @@ export default function ContactSection() {
                 href="https://www.linkedin.com/in/alexanderakerele"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-white border border-[#e4e4e0] text-[#69666e] shadow-sm rounded-full flex items-center justify-center hover:text-[#272525] hover:border-[#272525] transition-all"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a
                 href="mailto:alexakerele24@gmail.com"
-                className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-white border border-[#e4e4e0] text-[#69666e] shadow-sm rounded-full flex items-center justify-center hover:text-[#272525] hover:border-[#272525] transition-all"
                 aria-label="Email"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5" />

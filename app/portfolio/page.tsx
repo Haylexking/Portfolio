@@ -1,238 +1,349 @@
 "use client"
 
-import Header from "@/components/header"
-import { Button } from "@/components/ui/button"
-import ContactSection from "@/components/contact-section"
-import SectionTag from "@/components/section-tag"
-import Image from "next/image"
+import React, { useState, useEffect, useRef } from "react"
+import "@/styles/portfolio.css"
 
-const projects = [
+const projectsData = [
   {
     id: "onamini",
-    title: "Onamini",
-    subtitle: "UI/UX Case Study",
-    description:
-      "Designed a comprehensive platform connecting companies with top-tier talent through trust-focused verification and AI-driven matching. Explore how the ecosystem bridges the gap between flexibility and trust.",
-    buttonText: "View Case Study",
-    buttonLink: "/portfolio/onamini",
-    gradient: "from-emerald-600 to-teal-800",
-    tagColor: "bg-emerald-800/50 text-emerald-100 border-emerald-600",
-    mockupImage: "/images/onamini-mockup.png",
+    num: "01",
+    name: "Onamini",
+    type: "Case Study",
+    typeClass: "green",
+    desc: "AI-powered gig marketplace connecting companies with top-tier talent. Multi-role journeys, trust-first verification, escrow logic, and AI-driven matching. Designed end-to-end over 4 months.",
+    tags: ["AI/ML", "SaaS · Web App", "4 Months", "Lead Designer"],
+    link: "/portfolio/onamini",
+    linkText: "View Case Study ↗",
+    emo: "🤝",
+    cats: ["case-study", "fintech"],
+    size: "pc-xl"
   },
   {
-    id: "dammys-daycare",
-    title: "Dammy's Daycare",
-    description:
-      "Designed a clean, engaging landing page for Dammy's Daycare, a component created with MagicPath. Explore how design elements support clear communication and user trust.",
-    buttonText: "View Project",
-    buttonLink: "/portfolio/dammys-daycare",
-    gradient: "from-pink-500 to-rose-600",
-    tagColor: "bg-pink-800/50 text-pink-100 border-pink-600",
-    mockupImage: "https://designs.magicpath.ai/og/components/gentle-sky-7167",
+    id: "lockedin",
+    num: "02",
+    name: "LockedIn",
+    type: "Mobile · Case Study",
+    typeClass: "default",
+    desc: "Gamified productivity platform. 91% session completion, 42% W4 retention. Transformed solo focus into social accountability.",
+    tags: ["Mobile", "Gamification", "4-Week Sprint"],
+    link: "/portfolio/lockedin",
+    linkText: "View Case Study ↗",
+    emo: "🔒",
+    cats: ["case-study", "mobile"],
+    size: "pc-md"
   },
   {
     id: "idonate",
-    title: "iDonate",
-    subtitle: "Case Study",
-    description:
-      "Developed a user-friendly charity platform connecting people through item donations, promoting shared living in thriving communities. Explore how the app design enhances accessibility and community engagement.",
-    buttonText: "View Case Study",
-    buttonLink: "https://behance.net/gallery/152008977/iDonate-App-Case-Study",
-    gradient: "from-blue-600 to-blue-800",
-    tagColor: "bg-blue-800/50 text-blue-100 border-blue-600",
-    mockupImage: "/images/idonate-mockup.png",
+    num: "03",
+    name: "iDonate",
+    type: "Mobile · Case Study",
+    typeClass: "default",
+    desc: "User-friendly charity platform connecting communities through item donations. Designed to enhance accessibility and community engagement.",
+    tags: ["Mobile App", "Social Impact"],
+    link: "https://behance.net/gallery/152008977/iDonate-App-Case-Study",
+    linkText: "View on Behance ↗",
+    emo: "❤️",
+    cats: ["case-study", "mobile"],
+    size: "pc-lg",
+    external: true
   },
   {
     id: "ondo-state",
-    title: "Ondo State Ministry of Information Website",
-    description:
-      "Designed a comprehensive platform for citizens to access state news, historical data, and directories of various parastatals. Explore how the design improves access to vital state information.",
-    buttonText: "View Website",
-    buttonLink: "https://ondo-moi-ya31.vercel.app/",
-    gradient: "from-gray-700 to-gray-900",
-    tagColor: "bg-gray-800/50 text-gray-100 border-gray-600",
-    mockupImage: "/images/ondo-state-mockup.png",
+    num: "04",
+    name: "Ondo State MoI",
+    type: "GovTech",
+    typeClass: "yellow",
+    desc: "Platform for citizens to access state news, historical data, and directories of parastatals for the Ondo State Ministry of Information.",
+    tags: ["GovTech", "Information Architecture"],
+    link: "https://ondo-moi-ya31.vercel.app/",
+    linkText: "Visit Site ↗",
+    emo: "🏛️",
+    cats: ["govtech", "web"],
+    size: "pc-lg",
+    external: true
   },
   {
     id: "kukeat",
-    title: "Kukeat",
-    description:
-      "Designed a seamless foodstuff ordering platform that lets users order from the market with ease and receive speedy home deliveries. Discover how the design enhances user convenience and streamlines the ordering process.",
-    buttonText: "View Website",
-    buttonLink: "https://kukeat.com",
-    gradient: "from-red-500 to-orange-600",
-    tagColor: "bg-red-800/50 text-red-100 border-red-600",
-    mockupImage: "/images/kukeat-mockup.png",
+    num: "05",
+    name: "Kukeat",
+    type: "E-commerce",
+    typeClass: "default",
+    desc: "Seamless foodstuff ordering platform with speedy home delivery. Streamlining market ordering for everyday users.",
+    tags: ["E-commerce", "Delivery"],
+    link: "https://kukeat.com",
+    linkText: "Visit Site ↗",
+    emo: "🛒",
+    cats: ["web", "mobile"],
+    size: "pc-sm",
+    external: true
   },
   {
     id: "medirack",
-    title: "Medirack About us Page",
-    description:
-      "Designed a clean, engaging 'About' page for Medirack -health-tech brand, focusing on clear communication and user trust. Explore how design elements support the brand's mission in healthcare technology.",
-    buttonText: "View Project",
-    buttonLink: "https://www.behance.net/gallery/176953193/About-Us-Page-Design",
-    gradient: "from-blue-500 to-blue-700",
-    tagColor: "bg-blue-800/50 text-blue-100 border-blue-600",
-    mockupImage: "/images/medirack-mockup.png",
+    num: "06",
+    name: "Medirack",
+    type: "HealthTech",
+    typeClass: "green",
+    desc: "About page for a health-tech brand. Clean, trust-focused design supporting the brand's mission in healthcare technology.",
+    tags: ["HealthTech", "Landing Page"],
+    link: "https://www.behance.net/gallery/176953193/About-Us-Page-Design",
+    linkText: "View on Behance ↗",
+    emo: "🏥",
+    cats: ["healthtech", "web"],
+    size: "pc-sm",
+    external: true
   },
   {
     id: "burlux",
-    title: "Burlux Landing Page",
-    description:
-      "Designed a clean, engaging 'About' page for Medirack -health-tech brand, focusing on clear communication and user trust. Explore how design elements support the brand's mission in healthcare technology.",
-    buttonText: "View Project",
-    buttonLink: "https://www.behance.net/gallery/207692127/Burlux-Website",
-    gradient: "from-green-500 to-green-700",
-    tagColor: "bg-green-800/50 text-green-100 border-green-600",
-    mockupImage: "/images/burlux-mockup.png",
-  },
+    num: "07",
+    name: "Burlux",
+    type: "Landing Page",
+    typeClass: "yellow",
+    desc: "Clean, premium landing page design for a luxury brand. Focused on visual polish and brand communication.",
+    tags: ["Web Design", "Landing Page"],
+    link: "https://www.behance.net/gallery/207692127/Burlux-Website",
+    linkText: "View on Behance ↗",
+    emo: "✨",
+    cats: ["web"],
+    size: "pc-sm",
+    external: true
+  }
+];
 
-]
-
-const skills = [
-  {
-    title: "User Research",
-    description: "Understanding user needs through interviews, surveys, and usability testing.",
-  },
-  {
-    title: "Wireframing & Prototyping",
-    description: "Creating low-fidelity sketches and interactive prototypes to visualize ideas.",
-  },
-  {
-    title: "Information Architecture",
-    description: "Structuring and organizing content to enhance user navigation and experience.",
-  },
-  {
-    title: "Interaction Design",
-    description: "Designing engaging interfaces that encourage seamless user interaction.",
-  },
-  {
-    title: "Visual Design",
-    description: "Crafting visually appealing layouts with a strong sense of typography, color theory, and balance.",
-  },
-  {
-    title: "Responsive Design",
-    description: "Designing interfaces that adapt to various screen sizes and devices.",
-  },
-  {
-    title: "Usability Testing",
-    description: "Conducting tests to evaluate user experiences and improve the product.",
-  },
-  {
-    title: "Collaboration",
-    description:
-      "Working with cross-functional teams, including developers and product managers, to achieve project goals.",
-  },
-  {
-    title: "Tools Expertise",
-    description: "Proficiency in design tools like Figma, Figma, Miro, Adobe XD, and InVision.",
-  },
-]
+const skillsData = [
+  { ico: "🔭", title: "User Research", desc: "User interviews, surveys, and usability testing to understand needs deeply before touching a single frame.", size: "sk-4" },
+  { ico: "🔲", title: "Wireframing & Prototyping", desc: "From lo-fi sketches to interactive high-fidelity prototypes — testing ideas before they cost anything to build.", size: "sk-4" },
+  { ico: "🗺️", title: "Information Architecture", desc: "Structuring and organising content so users always know where they are and what to do next.", size: "sk-4" },
+  { ico: "✨", title: "Interaction Design", desc: "Designing micro-interactions and flows that feel effortless and encourage engagement.", size: "sk-3" },
+  { ico: "🎨", title: "Visual Design", desc: "Typography, colour theory, and composition that make interfaces both beautiful and functional.", size: "sk-3" },
+  { ico: "📱", title: "Responsive Design", desc: "Mobile-first thinking. Interfaces that adapt seamlessly across every screen size and device.", size: "sk-3" },
+  { ico: "🧪", title: "Usability Testing", desc: "Running structured tests to evaluate user experiences and iterate based on real evidence, not guesswork.", size: "sk-3" }
+];
 
 export default function PortfolioPage() {
-  return (
-    <div className="min-h-screen bg-gray-900" >
-      <Header />
+  const [filter, setFilter] = useState("all");
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const [ringCoords, setRingCoords] = useState({ x: 0, y: 0 });
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const cursorRingRef = useRef<HTMLDivElement>(null);
 
-      <main className="text-white">
-        {/* Hero Section */}
-        <section className="py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <div>
-                  <div className="mb-4">
-                    <SectionTag>Portfolio</SectionTag>
-                  </div>
-                  <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 font-title">
-                    Creative Solutions, Real Impact
-                  </h1>
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setCoords({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    let requestRef: number;
+    const animate = () => {
+      setRingCoords(prev => ({
+        x: prev.x + (coords.x - prev.x) * 0.15,
+        y: prev.y + (coords.y - prev.y) * 0.15
+      }));
+      requestRef = requestAnimationFrame(animate);
+    };
+    requestRef = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(requestRef);
+  }, [coords]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("on");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".rv").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const filteredProjects = projectsData.filter(p => filter === "all" || p.cats.includes(filter));
+
+  return (
+    <div className="portfolio-page">
+      <div 
+        ref={cursorRef}
+        className="cursor" 
+        style={{ left: `${coords.x}px`, top: `${coords.y}px` }}
+      ></div>
+      <div 
+        ref={cursorRingRef}
+        className="cursor-ring" 
+        style={{ left: `${ringCoords.x}px`, top: `${ringCoords.y}px` }}
+      ></div>
+
+      <div className="mesh m1"></div>
+      <div className="mesh m2"></div>
+      <div className="mesh m3"></div>
+
+      <div className="page">
+        <nav>
+          <a href="/" className="nav-logo">The Biochemist<span>UX</span></a>
+          <div className="nav-links">
+            <a href="/">Home</a>
+            <a href="/portfolio" className="active">Work</a>
+            <a href="https://drive.google.com/file/d/19FNWhoxPL1cFg6tGDUYwHIH8Oz80onug/view?usp=sharing" target="_blank">Résumé</a>
+          </div>
+          <a href="mailto:alexakerele24@gmail.com" className="nav-cta">Let's Talk →</a>
+        </nav>
+
+        <section className="work-hero">
+          <div className="wrap">
+            <div className="rv">
+              <div className="wh-eyebrow">Portfolio</div>
+              <h1 className="wh-title">
+                Creative<br/>
+                <span className="green">Solutions,</span><br/>
+                <span className="ghost">Real Impact.</span>
+              </h1>
+            </div>
+            <div className="wh-bottom rv d1">
+              <p className="wh-desc">7 projects. 5+ years. 7 industries. Every case study documents real decisions, real constraints, and real outcomes — not just pretty screens.</p>
+              <div className="wh-stats">
+                <div className="ws">
+                  <div className="ws-n">7</div>
+                  <div className="ws-l">Projects</div>
+                </div>
+                <div className="ws">
+                  <div className="ws-n">5+</div>
+                  <div className="ws-l">Years</div>
+                </div>
+                <div className="ws">
+                  <div className="ws-n">7</div>
+                  <div className="ws-l">Industries</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Projects Grid */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-16">
-              {projects.map((project, index) => (
-                <div key={project.id} className={`bg-gradient-to-br ${project.gradient} rounded-3xl p-8 lg:p-12`}>
-                  <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                      <div>
-                        {project.subtitle && (
-                          <div className="mb-4">
-                            <SectionTag className={project.tagColor}>{project.subtitle}</SectionTag>
-                          </div>
-                        )}
-                        <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 font-title">{project.title}</h3>
-                        <p className="text-white/90 text-lg leading-relaxed font-body">{project.description}</p>
-                      </div>
-                      <a href={project.buttonLink} target="_blank" rel="noopener noreferrer" className="mt-6 block">
-                        <Button
-                          variant="outline"
-                          className="bg-white text-gray-800 hover:bg-gray-100 border-white font-title"
-                        >
-                          {project.buttonText}
-                        </Button>
-                      </a>
-                    </div>
-
-                    <div className="relative">
-                      <div className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300 overflow-hidden">
-                        {/* Smart fitting: zoom to fill, align left */}
-                        <div className="aspect-video bg-white rounded-2xl overflow-hidden border-2 border-white">
-                          <Image
-                            src={project.mockupImage || "/placeholder.svg"}
-                            alt={`${project.title} Project Mockup`}
-                            width={600}
-                            height={400}
-                            className="w-full h-full object-cover object-[left_top]"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Skills Section with Focus Hover Effect */}
-        <section className="py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-left font-title">Skills</h2>
-
-            {/* Skills Grid with Focus Effect */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 group">
-              {skills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-800 rounded-2xl p-6 transition-all duration-300 ease-in-out
-                           hover:bg-gray-700 hover:scale-105 hover:shadow-xl
-                           group-hover:opacity-50 hover:!opacity-100
-                           border border-gray-700 hover:border-gray-600"
+        <div className="filter-strip">
+          <div className="wrap">
+            <div className="filter-inner">
+              {["all", "case-study", "web", "mobile", "fintech", "govtech", "healthtech"].map(cat => (
+                <button 
+                  key={cat}
+                  className={`filter-btn ${filter === cat ? "active" : ""}`}
+                  onClick={() => setFilter(cat)}
                 >
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-semibold text-white font-title transition-colors duration-300">
-                      {skill.title}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed font-body text-sm transition-colors duration-300">
-                      {skill.description}
-                    </p>
+                  {cat === "all" ? "All Work" : cat.charAt(0).toUpperCase() + cat.slice(1).replace("-", " ")}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <section className="projects-section">
+          <div className="wrap">
+            <div className="grid">
+              {filteredProjects.map((p, idx) => (
+                <a 
+                  key={p.id} 
+                  href={p.link} 
+                  className={`pc ${p.size} rv d${(idx % 4) + 1}`}
+                  target={p.external ? "_blank" : undefined}
+                >
+                  <div className="pc-img">
+                    <span className="pc-num-overlay">{p.num}</span>
+                    <span className={`pc-type-overlay ${p.typeClass}`}>{p.type}</span>
+                    <span className="pc-img-placeholder" style={p.emo === "🔒" ? {fontSize: "56px"} : {}}>{p.emo}</span>
                   </div>
-                </div>
+                  <div className="pc-body">
+                    <div>
+                      <div className="pc-name">{p.name}</div>
+                      <p className="pc-desc">{p.desc}</p>
+                      <div className="pc-tags">
+                        {p.tags.map(tag => <span key={tag} className="pc-tag">{tag}</span>)}
+                      </div>
+                    </div>
+                    <span className="pc-link">{p.linkText}</span>
+                  </div>
+                  {p.external && <span className="ext-badge">↗</span>}
+                </a>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Contact Section */}
-        <ContactSection />
-      </main>
-    </div >
+        <section className="skills-section">
+          <div className="wrap">
+            <div className="rv">
+              <div className="wh-eyebrow">Skills</div>
+              <h2 style={{fontFamily: "var(--font-display)", fontSize: "clamp(32px,4vw,48px)", fontWeight: 900, letterSpacing: "-1.5px", color: "var(--ink)", marginBottom: "8px"}}>
+                What I bring <span style={{color: "var(--ink-3)", fontWeight: 700}}>to the table.</span>
+              </h2>
+            </div>
+
+            <div className="skills-grid rv d1">
+              {skillsData.map((sk, idx) => (
+                <div key={idx} className={`sk ${sk.size}`}>
+                  <span className="sk-icon">{sk.ico}</span>
+                  <div className="sk-title">{sk.title}</div>
+                  <p className="sk-desc">{sk.desc}</p>
+                </div>
+              ))}
+
+              <div className="sk sk-tools sk-6">
+                <span className="sk-icon">🛠️</span>
+                <div className="sk-title">Tools & Stack</div>
+                <p className="sk-desc">The tools I reach for across every stage of the design process.</p>
+                <div className="tools-grid">
+                  {["Figma", "FigJam", "Notion", "Maze", "Jira", "Miro", "Protopie", "Adobe XD", "InVision", "Lyssna"].map(tool => (
+                    <span key={tool} className={`t-chip ${["Figma", "FigJam"].includes(tool) ? "hi" : tool === "Miro" ? "yi" : ""}`}>
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="sk sk-6" style={{background: "linear-gradient(135deg,rgba(255,199,39,0.05) 0%,rgba(114,213,96,0.04) 100%)", borderColor: "rgba(255,199,39,0.1)"}}>
+                <span className="sk-icon">🤝</span>
+                <div className="sk-title">Cross-functional Collaboration</div>
+                <p className="sk-desc">Working closely with engineers, product managers, and stakeholders to align on goals and ship cohesive, well-reasoned products. I speak both design and product fluently.</p>
+                <div style={{marginTop: "20px", display: "flex", gap: "20px", flexWrap: "wrap"}}>
+                  <div>
+                    <div style={{fontFamily: "var(--font-display)", fontSize: "28px", fontWeight: 900, color: "var(--ink)", letterSpacing: "-1px", lineHeight: 1}}>6+</div>
+                    <div style={{fontFamily: "var(--font-mono)", fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: ".08em", marginTop: "2px"}}>Team sizes</div>
+                  </div>
+                  <div>
+                    <div style={{fontFamily: "var(--font-display)", fontSize: "28px", fontWeight: 900, color: "var(--ink)", letterSpacing: "-1px", lineHeight: 1}}>12+</div>
+                    <div style={{fontFamily: "var(--font-mono)", fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: ".08em", marginTop: "2px"}}>Shipped projects</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="cta-section">
+          <div className="cta-inner rv">
+            <div className="cta-label">Like what you see?</div>
+            <h2 className="cta-h">Let's build<br/>something <span className="green">great.</span></h2>
+            <p className="cta-sub">Have a project that needs sharp product thinking and clean execution? I'm ready when you are.</p>
+            <div className="cta-acts">
+              <a href="mailto:alexakerele24@gmail.com" className="btn-glow">Start a conversation →</a>
+              <a href="https://drive.google.com/file/d/19FNWhoxPL1cFg6tGDUYwHIH8Oz80onug/view?usp=sharing" target="_blank" className="btn-glass">Download Résumé</a>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <a href="/" className="f-logo">The Biochemist<span>UX</span></a>
+          <div className="f-links">
+            <a href="/">Home</a>
+            <a href="/portfolio">Work</a>
+            <a href="mailto:alexakerele24@gmail.com">Email</a>
+            <a href="https://drive.google.com/file/d/19FNWhoxPL1cFg6tGDUYwHIH8Oz80onug/view?usp=sharing" target="_blank">Résumé</a>
+          </div>
+          <span className="f-copy">© 2025 Alexander Akerele</span>
+        </footer>
+      </div>
+    </div>
   )
 }

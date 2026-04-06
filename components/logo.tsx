@@ -85,10 +85,9 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
         </div>
       </div>
 
-      {/* Text */}
       <div className="flex flex-col">
-        <span className={`${currentSize.text} font-bold text-white leading-tight`}>The Biochemist</span>
-        <span className={`${currentSize.subtext} font-medium text-blue-400 tracking-wider uppercase`}>UX</span>
+        <span className={`${currentSize.text} font-bold text-[#272525] leading-tight`}>The Biochemist</span>
+        <span className={`${currentSize.subtext} font-medium text-blue-500 tracking-wider uppercase`}>UX</span>
       </div>
     </Link>
   )
