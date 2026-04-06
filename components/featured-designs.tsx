@@ -100,6 +100,50 @@ export default function FeaturedDesigns() {
             </div>
           </div>
 
+          {/* LockedIn Case Study */}
+          <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 overflow-hidden relative">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
+              <div className="space-y-6 sm:space-y-8">
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="mb-3 sm:mb-4">
+                    <SectionTag className="bg-green-800/50 text-green-100 border-green-600">UI/UX Case Study</SectionTag>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-title">LockedIn</h3>
+                  <p className="text-green-100 text-base sm:text-lg leading-relaxed font-body">
+                    Transforming solitary productivity into a social, gamified experience built on accountability, streaks, and shared momentum.
+                  </p>
+                </div>
+
+                <div className="pt-2 sm:pt-4">
+                  <a
+                    href="/portfolio/lockedin"
+                  >
+                    <Button
+                      variant="outline"
+                      className="bg-white text-green-800 hover:bg-green-50 border-white font-title"
+                    >
+                      View Case Study
+                    </Button>
+                  </a>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="rounded-2xl sm:rounded-3xl shadow-2xl max-w-xs sm:max-w-md mx-auto transform hover:scale-105 transition-transform duration-300 overflow-hidden">
+                  <div className="aspect-video bg-white rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white">
+                    <Image
+                      src="/images/lockedin-mockup.png"
+                      alt="LockedIn Project Mockup"
+                      width={600}
+                      height={400}
+                      className="w-full h-full object-cover object-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Ondo State Ministry Case Study */}
           <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
