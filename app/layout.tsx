@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Nunito, Lora } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const nunito = Nunito({
@@ -35,7 +36,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${nunito.variable} ${lora.variable}`}>{children}</body>
+      <body className={`${nunito.variable} ${lora.variable}`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
