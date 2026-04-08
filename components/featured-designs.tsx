@@ -29,7 +29,7 @@ export default function FeaturedDesigns() {
                     Designed a comprehensive platform connecting companies with top-tier talent through trust-focused verification and AI-driven matching. Explore how the ecosystem bridges the gap between flexibility and trust.
                   </p>
                 </div>
-                <a href="/portfolio/onamini" className="mt-6 block">
+                <a href="/work/onamini" className="mt-6 block">
                   <Button
                     variant="outline"
                     className="bg-white text-gray-800 hover:bg-gray-100 border-white font-title"
@@ -72,7 +72,7 @@ export default function FeaturedDesigns() {
 
                 <div className="pt-2 sm:pt-4">
                   <a
-                    href="/portfolio/dammys-daycare"
+                    href="/work/dammys-daycare"
                   >
                     <Button
                       variant="outline"
@@ -116,7 +116,7 @@ export default function FeaturedDesigns() {
 
                 <div className="pt-2 sm:pt-4">
                   <a
-                    href="/portfolio/lockedin"
+                    href="/work/lockedin"
                   >
                     <Button
                       variant="outline"

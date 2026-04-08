@@ -26,7 +26,7 @@ export default function LockedInCaseStudy() {
     }, []);
 
     return (
-        <div>
+        <div className="lockedin-page">
             <Header />
 
             {/* HERO */}
@@ -790,7 +790,7 @@ export default function LockedInCaseStudy() {
 
             {/* BACK */}
             <div className="back-section">
-                <Link href="/portfolio" className="back-link">← Back to Portfolio</Link>
+                <Link href="/work" className="back-link">← Back to My Work</Link>
             </div>
 
             {/* CTA */}

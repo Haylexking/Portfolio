@@ -1,62 +1,14 @@
+"use client"
 
+import "@/styles/daycare.css"
+import Header from "@/components/header"
+import Link from "next/link"
 
 export default function DammysDaycareCaseStudy() {
   return (
-    <div className="min-h-screen bg-white text-neutral-900 selection:bg-amber-200 selection:text-neutral-900">
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-neutral-100 py-4">
-        <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-          <a
-            href="/portfolio"
-            className="flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors group"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-arrow-left group-hover:-translate-x-0.5 transition-transform"
-              aria-hidden="true"
-            >
-              <path d="m12 19-7-7 7-7"></path>
-              <path d="M19 12H5"></path>
-            </svg>
-            <span>Back to Portfolio</span>
-          </a>
-          <span className="text-sm font-semibold text-neutral-900 tracking-tight">
-            Case Study
-          </span>
-          <a
-            href="https://dammysdaycare.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors group"
-          >
-            <span>Live Site</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-external-link group-hover:translate-x-0.5 transition-transform"
-              aria-hidden="true"
-            >
-              <path d="M15 3h6v6"></path>
-              <path d="M10 14 21 3"></path>
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            </svg>
-          </a>
-        </nav>
-      </header>
+    <div className="daycare-page min-h-screen bg-white text-neutral-900 selection:bg-amber-200 selection:text-neutral-900">
+      <Header />
+
       <main className="pt-24 pb-32">
         <section className="max-w-6xl mx-auto px-6 pt-16 pb-20">
           <div className="max-w-4xl">
@@ -1284,12 +1236,12 @@ export default function DammysDaycareCaseStudy() {
                 >
                   Get in Touch
                 </a>
-                <a
-                  href="/portfolio"
+                <Link
+                  href="/work"
                   className="inline-flex items-center justify-center gap-2 bg-white border border-neutral-200 hover:border-neutral-300 text-neutral-700 font-semibold py-3.5 px-8 rounded-full transition-all text-sm"
                 >
-                  View All Projects
-                </a>
+                  Back to My Work
+                </Link>
               </div>
             </div>
           </div>

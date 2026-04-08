@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Twitter, Linkedin, Mail } from "lucide-react"
-import Logo from "./logo"
+import Link from "next/link"
 import SectionTag from "./section-tag"
 
 export default function ContactSection() {
@@ -18,7 +18,7 @@ export default function ContactSection() {
               Let's Create Something Great Together!
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-[#69666e] leading-relaxed max-w-2xl mx-auto font-body px-4">
-              Have a project in mind or just want to say hello? Reach out, and let's bring your ideas to life. I'm
+              Have a project in mind or just want to say hello? Reach out, and let's bring your ideas to life. I me
               excited to collaborate and turn your vision into reality.
             </p>
           </div>
@@ -64,10 +64,11 @@ export default function ContactSection() {
               </a>
             </div>
 
-            {/* Responsive Logo */}
+            {/* Standardized Logo for Footer Area */}
             <div className="flex justify-center">
-              <Logo size="md" className="sm:hidden" />
-              <Logo size="lg" className="hidden sm:block" />
+              <Link href="/" className="nav-logo" style={{ fontSize: '20px' }}>
+                The Biochemist<span style={{ color: 'var(--green)' }}>UX</span>
+              </Link>
             </div>
           </div>
         </div>

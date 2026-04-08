@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
+import ContactSection from "@/components/contact-section"
 import "@/styles/home.css"
 
 export default function Home() {
@@ -82,21 +85,13 @@ export default function Home() {
 <div className="page">
 
 {/* ── NAV ─────────────────────────────────────────────── */}
-<nav>
-  <a href="/" className="nav-logo">The Biochemist<span>UX</span></a>
-  <div className="nav-links">
-    <a href="/portfolio">Work</a>
-    <a href="#about">About</a>
-    <a href="https://drive.google.com/file/d/19FNWhoxPL1cFg6tGDUYwHIH8Oz80onug/view?usp=sharing" target="_blank">Résumé</a>
-  </div>
-  <a href="mailto:alexakerele24@gmail.com" className="nav-cta">Let's Talk →</a>
-</nav>
+        <Header />
 
 {/* ── HERO ─────────────────────────────────────────────── */}
 <section className="hero">
   <div className="hero-available">
     <span className="avail-dot"></span>
-    Available for new roles · Remote-first
+    Available for new roles
   </div>
 
   <h1 className="hero-name">
@@ -109,7 +104,7 @@ export default function Home() {
     <div className="hero-desc rv">
       <p>Product designer turning complex systems into clear, human experiences. Biochemistry background. Behavioural design thinking. 5+ years shipping real products across 7 industries.</p>
       <div className="hero-btns">
-        <a href="/portfolio" className="btn-glow">View Work ↓</a>
+        <Link href="/work" className="btn-glow">View Work ↓</Link>
         <a href="mailto:alexakerele24@gmail.com" className="btn-glass">Get in touch</a>
       </div>
     </div>
@@ -168,13 +163,13 @@ export default function Home() {
       <div className="sec-eyebrow">Selected Work</div>
       <h2 className="sec-heading">Projects that <span className="ghost">shipped.</span></h2>
     </div>
-    <a href="/portfolio" className="view-all">All projects ↗</a>
+    <a href="/work" className="view-all">All projects ↗</a>
   </div>
 
   <div className="bento rv d1">
 
     {/* Onamini — featured */}
-    <a href="/portfolio/onamini" className="bc bc-featured">
+    <a href="/work/onamini" className="bc bc-featured">
       <div className="bc-body">
         <div>
           <span className="bc-type green">UI/UX Case Study · 2024</span>
@@ -193,7 +188,7 @@ export default function Home() {
     </a>
 
     {/* LockedIn — side top */}
-    <a href="/portfolio/lockedin" className="bc bc-side-top">
+    <a href="/work/lockedin" className="bc bc-side-top">
       <div className="bc-body" style={{ justifyContent: "space-between" }}>
         <div>
           <span className="bc-type">UI/UX Case Study · 2025</span>
@@ -210,7 +205,7 @@ export default function Home() {
     </a>
 
     {/* Dammy's Daycare — side bot */}
-    <a href="/portfolio/dammys-daycare" className="bc bc-side-bot">
+    <a href="/work/dammys-daycare" className="bc bc-side-bot">
       <div className="bc-body" style={{ justifyContent: "space-between" }}>
         <div>
           <span className="bc-type yellow">Landing Page · 2025</span>
@@ -309,7 +304,7 @@ export default function Home() {
       </div>
       <div className="glass-row">
         <div className="gr-label">Experience</div>
-        <div className="gr-val">5+ years · 7 industries</div>
+        <div className="gr-val">5+ years · 8 projects</div>
       </div>
       <div className="glass-row">
         <div className="gr-label">Location</div>
@@ -426,18 +421,7 @@ export default function Home() {
   </div>
 </section>
 
-{/* ── FOOTER ─────────────────────────────────────────── */}
-<footer>
-  <a href="/" className="f-logo">The Biochemist<span>UX</span></a>
-  <div className="f-links">
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <a href="#faq">FAQ</a>
-    <a href="mailto:alexakerele24@gmail.com">Email</a>
-    <a href="https://drive.google.com/file/d/19FNWhoxPL1cFg6tGDUYwHIH8Oz80onug/view?usp=sharing" target="_blank">Résumé</a>
-  </div>
-  <span className="f-copy">© 2025 Alexander Akerele</span>
-</footer>
+<Footer />
 
 </div>{/* /page */}
     </div>

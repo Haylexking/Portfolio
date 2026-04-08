@@ -5,9 +5,10 @@ import Link from "next/link"
 interface LogoProps {
   className?: string
   size?: "sm" | "md" | "lg"
+  isLight?: boolean
 }
 
-export default function Logo({ className = "", size = "md" }: LogoProps) {
+export default function Logo({ className = "", size = "md", isLight = false }: LogoProps) {
   const sizes = {
     sm: { container: "w-8 h-8", text: "text-lg", subtext: "text-xs" },
     md: { container: "w-10 h-10", text: "text-xl", subtext: "text-sm" },
@@ -86,7 +87,7 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
       </div>
 
       <div className="flex flex-col">
-        <span className={`${currentSize.text} font-bold text-[#272525] leading-tight`}>The Biochemist</span>
+        <span className={`${currentSize.text} font-bold ${isLight ? "text-[#1a1a1a]" : "text-[#f7f7f5]"} transition-colors duration-300 leading-tight`}>The Biochemist</span>
         <span className={`${currentSize.subtext} font-medium text-blue-500 tracking-wider uppercase`}>UX</span>
       </div>
     </Link>

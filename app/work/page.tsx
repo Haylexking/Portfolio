@@ -1,7 +1,9 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from "react"
-import "@/styles/portfolio.css"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
+import "@/styles/work.css"
 
 const projectsData = [
   {
@@ -12,7 +14,7 @@ const projectsData = [
     typeClass: "green",
     desc: "AI-powered gig marketplace connecting companies with top-tier talent. Multi-role journeys, trust-first verification, escrow logic, and AI-driven matching. Designed end-to-end over 4 months.",
     tags: ["AI/ML", "SaaS · Web App", "4 Months", "Lead Designer"],
-    link: "/portfolio/onamini",
+    link: "/work/onamini",
     linkText: "View Case Study ↗",
     emo: "🤝",
     cats: ["case-study", "fintech"],
@@ -26,15 +28,29 @@ const projectsData = [
     typeClass: "default",
     desc: "Gamified productivity platform. 91% session completion, 42% W4 retention. Transformed solo focus into social accountability.",
     tags: ["Mobile", "Gamification", "4-Week Sprint"],
-    link: "/portfolio/lockedin",
+    link: "/work/lockedin",
     linkText: "View Case Study ↗",
     emo: "🔒",
     cats: ["case-study", "mobile"],
     size: "pc-md"
   },
   {
-    id: "idonate",
+    id: "daycare",
     num: "03",
+    name: "Dammy's Daycare",
+    type: "Landing Page",
+    typeClass: "yellow",
+    desc: "Trust-first childcare website — closing the gap between parent anxiety and daycare credibility.",
+    tags: ["Web Design", "Responsive"],
+    link: "/work/dammys-daycare",
+    linkText: "View Project ↗",
+    emo: "👶",
+    cats: ["web"],
+    size: "pc-sm"
+  },
+  {
+    id: "idonate",
+    num: "04",
     name: "iDonate",
     type: "Mobile · Case Study",
     typeClass: "default",
@@ -49,7 +65,7 @@ const projectsData = [
   },
   {
     id: "ondo-state",
-    num: "04",
+    num: "05",
     name: "Ondo State MoI",
     type: "GovTech",
     typeClass: "yellow",
@@ -64,7 +80,7 @@ const projectsData = [
   },
   {
     id: "kukeat",
-    num: "05",
+    num: "06",
     name: "Kukeat",
     type: "E-commerce",
     typeClass: "default",
@@ -79,7 +95,7 @@ const projectsData = [
   },
   {
     id: "medirack",
-    num: "06",
+    num: "07",
     name: "Medirack",
     type: "HealthTech",
     typeClass: "green",
@@ -94,7 +110,7 @@ const projectsData = [
   },
   {
     id: "burlux",
-    num: "07",
+    num: "08",
     name: "Burlux",
     type: "Landing Page",
     typeClass: "yellow",
@@ -183,20 +199,12 @@ export default function PortfolioPage() {
       <div className="mesh m3"></div>
 
       <div className="page">
-        <nav>
-          <a href="/" className="nav-logo">The Biochemist<span>UX</span></a>
-          <div className="nav-links">
-            <a href="/">Home</a>
-            <a href="/portfolio" className="active">Work</a>
-            <a href="https://drive.google.com/file/d/19FNWhoxPL1cFg6tGDUYwHIH8Oz80onug/view?usp=sharing" target="_blank">Résumé</a>
-          </div>
-          <a href="mailto:alexakerele24@gmail.com" className="nav-cta">Let's Talk →</a>
-        </nav>
+        <Header />
 
         <section className="work-hero">
           <div className="wrap">
             <div className="rv">
-              <div className="wh-eyebrow">Portfolio</div>
+              <div className="wh-eyebrow">Work</div>
               <h1 className="wh-title">
                 Creative<br/>
                 <span className="green">Solutions,</span><br/>
@@ -204,10 +212,10 @@ export default function PortfolioPage() {
               </h1>
             </div>
             <div className="wh-bottom rv d1">
-              <p className="wh-desc">7 projects. 5+ years. 7 industries. Every case study documents real decisions, real constraints, and real outcomes — not just pretty screens.</p>
+              <p className="wh-desc">8 projects. 5+ years. 7 industries. Every case study documents real decisions, real constraints, and real outcomes — not just pretty screens.</p>
               <div className="wh-stats">
                 <div className="ws">
-                  <div className="ws-n">7</div>
+                  <div className="ws-n">8</div>
                   <div className="ws-l">Projects</div>
                 </div>
                 <div className="ws">
@@ -301,48 +309,19 @@ export default function PortfolioPage() {
                   ))}
                 </div>
               </div>
-
-              <div className="sk sk-6" style={{background: "linear-gradient(135deg,rgba(255,199,39,0.05) 0%,rgba(114,213,96,0.04) 100%)", borderColor: "rgba(255,199,39,0.1)"}}>
-                <span className="sk-icon">🤝</span>
-                <div className="sk-title">Cross-functional Collaboration</div>
-                <p className="sk-desc">Working closely with engineers, product managers, and stakeholders to align on goals and ship cohesive, well-reasoned products. I speak both design and product fluently.</p>
-                <div style={{marginTop: "20px", display: "flex", gap: "20px", flexWrap: "wrap"}}>
-                  <div>
-                    <div style={{fontFamily: "var(--font-display)", fontSize: "28px", fontWeight: 900, color: "var(--ink)", letterSpacing: "-1px", lineHeight: 1}}>6+</div>
-                    <div style={{fontFamily: "var(--font-mono)", fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: ".08em", marginTop: "2px"}}>Team sizes</div>
-                  </div>
-                  <div>
-                    <div style={{fontFamily: "var(--font-display)", fontSize: "28px", fontWeight: 900, color: "var(--ink)", letterSpacing: "-1px", lineHeight: 1}}>12+</div>
-                    <div style={{fontFamily: "var(--font-mono)", fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: ".08em", marginTop: "2px"}}>Shipped projects</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
         <section className="cta-section">
           <div className="cta-inner rv">
-            <div className="cta-label">Like what you see?</div>
-            <h2 className="cta-h">Let's build<br/>something <span className="green">great.</span></h2>
-            <p className="cta-sub">Have a project that needs sharp product thinking and clean execution? I'm ready when you are.</p>
-            <div className="cta-acts">
-              <a href="mailto:alexakerele24@gmail.com" className="btn-glow">Start a conversation →</a>
-              <a href="https://drive.google.com/file/d/19FNWhoxPL1cFg6tGDUYwHIH8Oz80onug/view?usp=sharing" target="_blank" className="btn-glass">Download Résumé</a>
-            </div>
+            <h2 className="cta-h">Ready to build<br/>something <span className="green">extraordinary?</span></h2>
+            <p className="cta-sub">I'm currently open to new opportunities and interesting projects.</p>
+            <a href="mailto:alexakerele24@gmail.com" className="btn-glow">Get In Touch</a>
           </div>
         </section>
 
-        <footer>
-          <a href="/" className="f-logo">The Biochemist<span>UX</span></a>
-          <div className="f-links">
-            <a href="/">Home</a>
-            <a href="/portfolio">Work</a>
-            <a href="mailto:alexakerele24@gmail.com">Email</a>
-            <a href="https://drive.google.com/file/d/19FNWhoxPL1cFg6tGDUYwHIH8Oz80onug/view?usp=sharing" target="_blank">Résumé</a>
-          </div>
-          <span className="f-copy">© 2025 Alexander Akerele</span>
-        </footer>
+        <Footer />
       </div>
     </div>
   )

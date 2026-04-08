@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Euclid+Circular+B:wght@400;500;600;700;800&family=General+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
+    .lockedin-page {
       --black: #0e0e0e;
       --white: #f7f7f5;
       --green: #72d560;
@@ -21,19 +19,122 @@
       --font-display: 'Euclid Circular B', sans-serif;
       --font-body: 'General Sans', sans-serif;
       --font-mono: 'DM Mono', monospace;
-    }
 
-    html { scroll-behavior: smooth; }
-
-    body {
       font-family: var(--font-body);
       background: var(--white);
       color: var(--text-primary);
       -webkit-font-smoothing: antialiased;
       line-height: 1.6;
+      min-height: 100vh;
     }
 
-    /* Nav styles inherited from global `<Header />` component */
+    .lockedin-page section { padding: clamp(60px, 8vw, 100px) 0; }
+    .lockedin-page section + section { border-top: 1px solid var(--border); }
+
+    /* Nav styles isolated for this page */
+    .nav-inner, nav.navbar-root {
+      display: flex;
+      align-items: center;
+    }
+
+    nav.navbar-root {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      gap: 4px;
+      padding: 6px 12px;
+      background: rgba(10, 9, 8, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 100px;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      width: auto;
+    }
+
+    nav.navbar-root.is-light {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 14px;
+      color: #f2ede8;
+      text-decoration: none;
+      letter-spacing: -0.3px;
+      line-height: 1;
+    }
+    .is-light .nav-logo { color: #1a1a1a; }
+    .nav-logo span { color: var(--green); }
+
+    .nav-mobile-btn {
+      background: none; border: none; color: #f2ede8; cursor: pointer; display: none; padding: 4px;
+    }
+    .is-light .nav-mobile-btn { color: #1a1a1a; }
+    @media (max-width: 768px) { .nav-mobile-btn { display: block; } }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 2px; margin: 0 8px;
+    }
+
+    .nav-links a {
+      font-size: 13px; font-weight: 500; color: var(--text-muted); text-decoration: none; padding: 7px 14px; border-radius: 100px; transition: all 0.2s;
+    }
+    .is-light .nav-links a { color: var(--text-muted); }
+
+    .nav-links a:hover, .nav-links a.active {
+      background: var(--surface-2); color: #f2ede8;
+    }
+    .is-light .nav-links a:hover, .is-light .nav-links a.active { 
+      background: var(--surface-2); color: #1a1a1a; 
+    }
+
+    .nav-cta {
+      background: var(--green); color: #0a0908; font-weight: 700; font-size: 13px; padding: 8px 16px; border-radius: 100px; text-decoration: none; transition: all 0.2s; display: inline-block;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    @media (max-width: 768px) {
+      nav.navbar-root {
+        width: calc(100% - 32px);
+        border-radius: 40px;
+        padding: 6px 12px;
+      }
+
+      nav.navbar-root.open {
+        flex-direction: column;
+        height: auto;
+        border-radius: 24px;
+        padding: 20px;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        transform: none;
+        width: auto;
+      }
+
+      .nav-inner {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav-links {
+        display: none; width: 100%; flex-direction: column; align-items: flex-start; padding-top: 20px; gap: 12px;
+      }
+      nav.navbar-root.open .nav-links { display: flex; }
+      .nav-links a { width: 100%; padding: 10px 16px; font-size: 16px; }
+    }
 
     /* ── HERO ── */
     .hero {

@@ -1,5 +1,6 @@
 "use client"
 
+import "@/styles/onamini.css"
 import Header from "@/components/header"
 import ContactSection from "@/components/contact-section"
 import { Button } from "@/components/ui/button"
@@ -883,9 +884,9 @@ export default function OnaminiCaseStudy() {
                                     <p className="text-slate-600 text-sm font-body">Expanding the AI model to suggest skill upskilling paths based on market demand.</p>
                                 </div>
                             </div>
-                            <Link href="/portfolio">
+                            <Link href="/work">
                                 <Button className="inline-flex items-center gap-2 px-8 py-4 h-auto bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-all hover:scale-105 shadow-xl font-title">
-                                    Back to Portfolio
+                                    Back to My Work
                                 </Button>
                             </Link>
                         </motion.div>
