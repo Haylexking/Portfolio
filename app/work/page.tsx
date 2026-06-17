@@ -7,8 +7,23 @@ import "@/styles/work.css"
 
 const projectsData = [
   {
-    id: "onamini",
+    id: "tradestack",
     num: "01",
+    name: "Tradestack",
+    type: "Website & Mobile App",
+    typeClass: "green",
+    desc: "Fintech platform designed to simplify trading and investment management for everyday users. Designed intuitive user flows, responsive layouts, and cross-platform visual consistency.",
+    tags: ["Fintech", "Web & Mobile", "6 Months", "Product Designer"],
+    link: "https://usetradestack.com",
+    linkText: "Visit Website ↗",
+    emo: "📈",
+    cats: ["web", "mobile", "fintech"],
+    size: "pc-xl",
+    external: true
+  },
+  {
+    id: "onamini",
+    num: "02",
     name: "Onamini",
     type: "Case Study",
     typeClass: "green",
@@ -18,11 +33,11 @@ const projectsData = [
     linkText: "View Case Study ↗",
     emo: "🤝",
     cats: ["case-study", "fintech"],
-    size: "pc-xl"
+    size: "pc-md"
   },
   {
     id: "lockedin",
-    num: "02",
+    num: "03",
     name: "LockedIn",
     type: "Mobile · Case Study",
     typeClass: "default",
@@ -32,11 +47,11 @@ const projectsData = [
     linkText: "View Case Study ↗",
     emo: "🔒",
     cats: ["case-study", "mobile"],
-    size: "pc-md"
+    size: "pc-sm"
   },
   {
     id: "daycare",
-    num: "03",
+    num: "04",
     name: "Dammy's Daycare",
     type: "Landing Page",
     typeClass: "yellow",
@@ -46,11 +61,11 @@ const projectsData = [
     linkText: "View Project ↗",
     emo: "👶",
     cats: ["web"],
-    size: "pc-sm"
+    size: "pc-lg"
   },
   {
     id: "idonate",
-    num: "04",
+    num: "05",
     name: "iDonate",
     type: "Mobile · Case Study",
     typeClass: "default",
@@ -65,7 +80,7 @@ const projectsData = [
   },
   {
     id: "ondo-state",
-    num: "05",
+    num: "06",
     name: "Ondo State MoI",
     type: "GovTech",
     typeClass: "yellow",
@@ -80,7 +95,7 @@ const projectsData = [
   },
   {
     id: "kukeat",
-    num: "06",
+    num: "07",
     name: "Kukeat",
     type: "E-commerce",
     typeClass: "default",
@@ -95,7 +110,7 @@ const projectsData = [
   },
   {
     id: "medirack",
-    num: "07",
+    num: "08",
     name: "Medirack",
     type: "HealthTech",
     typeClass: "green",
@@ -110,7 +125,7 @@ const projectsData = [
   },
   {
     id: "burlux",
-    num: "08",
+    num: "09",
     name: "Burlux",
     type: "Landing Page",
     typeClass: "yellow",

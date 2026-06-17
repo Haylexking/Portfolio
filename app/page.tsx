@@ -168,31 +168,48 @@ export default function Home() {
 
   <div className="bento rv d1">
 
-    {/* Onamini — featured */}
-    <a href="/work/onamini" className="bc bc-featured">
+    {/* Tradestack — featured */}
+    <a href="https://usetradestack.com" target="_blank" rel="noopener noreferrer" className="bc bc-featured">
       <div className="bc-body">
         <div>
-          <span className="bc-type green">UI/UX Case Study · 2024</span>
+          <span className="bc-type green">Fintech Platform · 2025</span>
           <div className="bc-num">01 —</div>
-          <div className="bc-title">Onamini</div>
-          <p className="bc-desc">AI-powered gig marketplace. Multi-role journeys, trust-first verification, smart escrow, and AI-driven matching across companies and talent.</p>
+          <div className="bc-title">Tradestack</div>
+          <p className="bc-desc">Fintech platform designed to simplify trading and investment management. End-to-end product design across web and mobile, creating intuitive user flows and responsive layouts.</p>
           <div className="bc-tags">
-            <span className="bc-tag">AI/ML</span>
-            <span className="bc-tag">Web App · SaaS</span>
-            <span className="bc-tag">4 Months</span>
-            <span className="bc-tag">Lead Designer</span>
+            <span className="bc-tag">Fintech</span>
+            <span className="bc-tag">Web & Mobile</span>
+            <span className="bc-tag">6 Months</span>
+            <span className="bc-tag">Product Designer</span>
           </div>
-          <span className="bc-link">View Case Study ↗</span>
+          <span className="bc-link">Visit Website ↗</span>
         </div>
       </div>
     </a>
 
-    {/* LockedIn — side top */}
-    <a href="/work/lockedin" className="bc bc-side-top">
+    {/* Onamini — side top */}
+    <a href="/work/onamini" className="bc bc-side-top">
+      <div className="bc-body" style={{ justifyContent: "space-between" }}>
+        <div>
+          <span className="bc-type green">UI/UX Case Study · 2024</span>
+          <div className="bc-num">02 —</div>
+          <div className="bc-title">Onamini</div>
+          <p className="bc-desc">AI-powered gig marketplace. Multi-role journeys, trust-first verification, and smart escrow.</p>
+          <div className="bc-tags">
+            <span className="bc-tag">AI/ML</span>
+            <span className="bc-tag">Web App · SaaS</span>
+          </div>
+        </div>
+        <span className="bc-link">View Case Study ↗</span>
+      </div>
+    </a>
+
+    {/* LockedIn — side bot */}
+    <a href="/work/lockedin" className="bc bc-side-bot">
       <div className="bc-body" style={{ justifyContent: "space-between" }}>
         <div>
           <span className="bc-type">UI/UX Case Study · 2025</span>
-          <div className="bc-num">02 —</div>
+          <div className="bc-num">03 —</div>
           <div className="bc-title">LockedIn</div>
           <p className="bc-desc">Gamified productivity — 91% session completion. 42% W4 retention.</p>
           <div className="bc-tags">
@@ -204,33 +221,16 @@ export default function Home() {
       </div>
     </a>
 
-    {/* Dammy's Daycare — side bot */}
-    <a href="/work/dammys-daycare" className="bc bc-side-bot">
+    {/* Dammy's Daycare — sm-1 */}
+    <a href="/work/dammys-daycare" className="bc bc-sm-1">
       <div className="bc-body" style={{ justifyContent: "space-between" }}>
         <div>
           <span className="bc-type yellow">Landing Page · 2025</span>
-          <div className="bc-num">03 —</div>
+          <div className="bc-num">04 —</div>
           <div className="bc-title">Dammy's Daycare</div>
           <p className="bc-desc">Trust-first childcare website — closing the gap between parent anxiety and daycare credibility.</p>
-          <div className="bc-tags">
-            <span className="bc-tag">Web Design</span>
-            <span className="bc-tag">Responsive</span>
-          </div>
         </div>
         <span className="bc-link">View Project ↗</span>
-      </div>
-    </a>
-
-    {/* Ondo State */}
-    <a href="https://ondo-moi-ya31.vercel.app/" target="_blank" className="bc bc-sm-1">
-      <div className="bc-body" style={{ justifyContent: "space-between" }}>
-        <div>
-          <span className="bc-type">GovTech · 2023</span>
-          <div className="bc-num">04 —</div>
-          <div className="bc-title">Ondo State MoI</div>
-          <p className="bc-desc">Platform for citizens to access state news, data & parastatals.</p>
-        </div>
-        <span className="bc-link">Visit Site ↗</span>
       </div>
     </a>
 

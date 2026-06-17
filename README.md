@@ -6,24 +6,39 @@ I approach design with intention — combining UX research, interface design, an
 
 ---
 
-## 🧠 Featured Projects
+## 📁 Projects I've Worked On
 
-- **Ondo MOI Website Revamp**  
-  A redesigned interface and content structure for the Ondo State Ministry of Information, aimed at improving access to public resources and communication flow between government and citizens.
+- **Tradestack** (Fintech Platform)  
+  A fintech platform designed to simplify trading and investment management. Built user flows, responsive layouts, and unified visual language across website and mobile application platforms.
 
-- **Kukeat Store Dashboard**  
-  UX and UI design for a food ordering platform’s store dashboard, focused on improving product management, inventory tracking, and sales analytics for vendors.
+- **Onamini** (AI-Powered Gig Marketplace)  
+  AI-powered gig marketplace connecting companies with top-tier talent. Designed multi-role journeys, trust-first verification, escrow logic, and AI-driven matching.
 
-- **iDonate**  
-  A donation and fundraising platform where users can seamlessly create campaigns and receive contributions. Focused on simplicity, trust, and emotional clarity throughout the design.
+- **LockedIn** (Gamified Productivity App)  
+  Gamified productivity mobile application transforming solo focus into social accountability, resulting in high session completion and user retention rates.
 
-- **Convaya Website Revamp**  
-  A complete redesign of a multi-service travel and lifestyle platform, covering flows for events, flights, visas, eSIMs, hotel bookings, transfers, and lounge access.
+- **Dammy's Daycare** (Childcare Website)  
+  Trust-first childcare website closing the gap between parent anxiety and daycare credibility with clean, friendly visual communication.
+
+- **iDonate** (Charity Mobile App)  
+  User-friendly charity platform connecting communities through item donations, designed to enhance accessibility and social impact.
+
+- **Ondo State MoI** (GovTech Portal)  
+  Platform for citizens to access state news, historical data, and directories of parastatals for the Ondo State Ministry of Information.
+
+- **Kukeat** (E-commerce & Store Dashboard)  
+  Seamless foodstuff ordering platform with speedy home delivery and a store dashboard for product and inventory management.
+
+- **Medirack** (HealthTech About Page)  
+  Clean, trust-focused about page design supporting the health-tech brand's mission in healthcare technology.
+
+- **Burlux** (Premium Luxury Landing Page)  
+  Clean, premium landing page design for a luxury brand, focused on visual polish and premium brand identity.
 
 ---
 
-📁 **View full portfolio**: https://portfolio-eight-rho-87.vercel.app/
+📁 **View full portfolio**: [portfolio-eight-rho-87.vercel.app](https://portfolio-eight-rho-87.vercel.app/)
 
 ---
 
-Feel free to reach out if you’re interested in collaborating or learning more about any of these projects.
+Feel free to reach out if you’re interested in collaborating or learning more about any of these projects.
