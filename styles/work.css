@@ -7,8 +7,13 @@
   color: #f2ede8;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  cursor: none;
   min-height: 100vh;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-page {
+    cursor: none;
+  }
 }
 
 /* ── RESET ── */
@@ -43,6 +48,11 @@
 .portfolio-page:has(a:hover) .cursor { width: 16px; height: 16px; }
 .portfolio-page:has(a:hover) .cursor-ring { width: 50px; height: 50px; }
 .portfolio-page:has(button:hover) .cursor-ring { width: 50px; height: 50px; }
+
+@media (hover: none) or (pointer: coarse) or (max-width: 768px) {
+  .portfolio-page .cursor, .portfolio-page .cursor-ring { display: none !important; }
+  .portfolio-page { cursor: auto !important; }
+}
 
 /* ── GRAIN ── */
 .portfolio-page::before {

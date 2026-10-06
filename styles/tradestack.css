@@ -1,0 +1,176 @@
+/* ── TRADESTACK CASE STUDY STYLESHEET ─────────────────────
+   Crafted with Emil Kowalski-inspired craft & precision:
+   - Deep muted carbon canvas (#09090b / #0d0d10)
+   - Electric Lime / Lemon accent (#f4ff6b / #d8ea46)
+   - Micro-borders (1px subtle rgba(255,255,255,0.08))
+   - Bento layout primitives & spring physics
+   - Monospace metrics & tabular numerals
+   ────────────────────────────────────────────────────────────── */
+
+.tradestack-root {
+  background-color: #08080a;
+  color: #ededef;
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle ambient backdrop grid */
+.ts-grid-bg {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(244, 255, 107, 0.06) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Emil-style tactile bento card */
+.ts-card {
+  background: rgba(18, 18, 22, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 8px 24px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ts-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 16px 36px -6px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.ts-card-interactive {
+  cursor: pointer;
+}
+.ts-card-interactive:hover {
+  transform: translateY(-2px);
+}
+
+/* Subtle inner glow badge */
+.ts-pill {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+}
+
+.ts-pill-accent {
+  background: rgba(244, 255, 107, 0.08);
+  border-color: rgba(244, 255, 107, 0.22);
+  color: #f4ff6b;
+}
+
+.ts-pill-emerald {
+  background: rgba(114, 213, 96, 0.08);
+  border-color: rgba(114, 213, 96, 0.22);
+  color: #72d560;
+}
+
+/* Number display styling */
+.ts-stat-number {
+  font-family: var(--font-display, inherit);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+/* Tabular numerals for financial tickers */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Segmented control switchers */
+.ts-segmented-group {
+  background: rgba(10, 10, 14, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3px;
+  border-radius: 12px;
+  display: inline-flex;
+  gap: 2px;
+}
+
+.ts-segmented-btn {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 9px;
+  color: #a1a1aa;
+  transition: all 0.15s ease;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ts-segmented-btn:hover {
+  color: #ffffff;
+}
+
+.ts-segmented-btn.active {
+  background: #f4ff6b;
+  color: #0a0a0c;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Emil Kowalski style soft pulse dot */
+.ts-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #f4ff6b;
+  box-shadow: 0 0 10px #f4ff6b;
+  display: inline-block;
+  animation: tsPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes tsPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Clean slider styling */
+.ts-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.ts-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #f4ff6b;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(244, 255, 107, 0.6);
+  border: 2px solid #08080a;
+  transition: transform 0.1s ease;
+}
+
+.ts-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}

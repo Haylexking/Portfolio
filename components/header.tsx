@@ -49,26 +49,19 @@ export default function Header({ isLight = false }: HeaderProps) {
         >
           Résumé
         </a>
+        <a 
+          href="https://www.linkedin.com/in/alexanderakerele" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          LinkedIn ↗
+        </a>
       </div>
 
       {/* Single CTA Instance */}
       <a href="mailto:alexakerele24@gmail.com" className="nav-cta">
         Let's Talk →
       </a>
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .nav-cta {
-            display: none !important;
-          }
-          .navbar-root.open .nav-cta {
-            display: inline-block !important;
-            width: 100%;
-            text-align: center;
-            margin-top: 20px;
-          }
-        }
-      `}</style>
     </nav>
   )
 }

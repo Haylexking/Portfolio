@@ -1,104 +1,88 @@
-/* Nav styles isolated for Onamini */
-.nav-inner, nav.navbar-root {
-  display: flex;
-  align-items: center;
+/* ── ONAMINI CASE STUDY STYLESHEET ─────────────────────
+   Modern AI Gig Platform Showcase:
+   - Light violet / Clean slate aesthetic
+   - Device frame styling without cropping
+   - Emil Kowalski-inspired bento & interactive cards
+   - Full dashboard viewport display
+   ────────────────────────────────────────────────────────────── */
+
+.onamini-root {
+  background-color: #faf9fd;
+  color: #1e1b2e;
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-nav.navbar-root {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  gap: 4px;
-  padding: 6px 12px;
-  background: rgba(10, 9, 8, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.13);
-  border-radius: 100px;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-  width: auto;
+/* Device mock frame (Browser / Dashboard window) */
+.onamini-browser-frame {
+  background: #ffffff;
+  border: 1px solid rgba(94, 23, 235, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 
+    0 1px 3px rgba(94, 23, 235, 0.04),
+    0 20px 48px -12px rgba(94, 23, 235, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
 
-nav.navbar-root.is-light {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+.onamini-browser-frame:hover {
+  box-shadow: 
+    0 1px 3px rgba(94, 23, 235, 0.06),
+    0 28px 60px -12px rgba(94, 23, 235, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-.nav-inner {
+.onamini-browser-header {
+  background: #fbfaff;
+  border-bottom: 1px solid rgba(94, 23, 235, 0.08);
+  padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.nav-logo {
-  font-family: sans-serif;
-  font-weight: 800;
-  font-size: 14px;
-  color: #f2ede8;
-  text-decoration: none;
-  letter-spacing: -0.3px;
-  line-height: 1;
-}
-.is-light .nav-logo { color: #1a1a1a; }
-.nav-logo span { color: #72d560; }
-
-.nav-mobile-btn {
-  background: none; border: none; color: #f2ede8; cursor: pointer; display: none; padding: 4px;
-}
-.is-light .nav-mobile-btn { color: #1a1a1a; }
-@media (max-width: 768px) { .nav-mobile-btn { display: block; } }
-
-.nav-links {
-  display: flex; align-items: center; gap: 2px; margin: 0 8px;
+.onamini-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-.nav-links a {
-  font-size: 13px; font-weight: 500; color: rgba(242,237,232,0.55); text-decoration: none; padding: 7px 14px; border-radius: 100px; transition: all 0.2s;
-}
-.is-light .nav-links a { color: #696363; }
-
-.nav-links a:hover, .nav-links a.active {
-  background: rgba(255,255,255,0.07); color: #f2ede8;
-}
-.is-light .nav-links a:hover, .is-light .nav-links a.active { 
-  background: rgba(0,0,0,0.05); color: #1a1a1a; 
+/* Bento card tokens */
+.onamini-bento-card {
+  background: #ffffff;
+  border: 1px solid rgba(94, 23, 235, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px -2px rgba(94, 23, 235, 0.04);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nav-cta {
-  background: #72d560; color: #0a0908; font-weight: 700; font-size: 13px; padding: 8px 16px; border-radius: 100px; text-decoration: none; transition: all 0.2s; display: inline-block;
+.onamini-bento-card:hover {
+  border-color: rgba(94, 23, 235, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -4px rgba(94, 23, 235, 0.1);
 }
-.nav-cta:hover { opacity: 0.85; }
 
-@media (max-width: 768px) {
-  nav.navbar-root {
-    width: calc(100% - 32px);
-    border-radius: 40px;
-    padding: 6px 12px;
-  }
+/* Subtle accent pill */
+.onamini-pill {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f4eeff;
+  border: 1px solid rgba(94, 23, 235, 0.15);
+  color: #5e17eb;
+  font-weight: 600;
+}
 
-  nav.navbar-root.open {
-    flex-direction: column;
-    height: auto;
-    border-radius: 24px;
-    padding: 20px;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    transform: none;
-    width: auto;
-  }
-
-  .nav-inner {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .nav-links {
-    display: none; width: 100%; flex-direction: column; align-items: flex-start; padding-top: 20px; gap: 12px;
-  }
-  nav.navbar-root.open .nav-links { display: flex; }
-  .nav-links a { width: 100%; padding: 10px 16px; font-size: 16px; }
+/* Tabular numerals for stats */
+.tnum {
+  font-variant-numeric: tabular-nums;
 }

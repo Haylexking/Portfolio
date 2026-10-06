@@ -1,6 +1,7 @@
 "use client"
 
 import Header from "@/components/header"
+import Footer from "@/components/footer"
 import Link from "next/link"
 import { useEffect } from "react"
 import "@/styles/lockedin.css"
@@ -788,17 +789,23 @@ export default function LockedInCaseStudy() {
                 </div>
             </section>
 
-            {/* BACK */}
-            <div className="back-section">
-                <Link href="/work" className="back-link">← Back to My Work</Link>
+            {/* NAVIGATION & NEXT PROJECT */}
+            <div className="back-section" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link href="/work" className="back-link">← All Projects</Link>
+                <Link href="/work/onamini" className="back-link" style={{ background: 'rgba(114,213,96,0.1)', borderColor: 'rgba(114,213,96,0.3)', color: 'var(--green)' }}>Next Case Study: Onamini →</Link>
             </div>
 
             {/* CTA */}
             <div className="cta-section">
-                <h2>Let's Create Something Great Together!</h2>
-                <p>Have a project in mind or just want to say hello? Reach out and let's Bring your ideas to life.</p>
-                <a href="mailto:alexakerele24@gmail.com" className="cta-btn">Get In Touch ↗</a>
+                <h2>Let&apos;s Create Something Great Together!</h2>
+                <p>Have a project in mind or just want to say hello? Reach out and let&apos;s bring your ideas to life.</p>
+                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '20px' }}>
+                    <a href="mailto:alexakerele24@gmail.com" className="cta-btn">Get In Touch ↗</a>
+                    <a href="https://www.linkedin.com/in/alexanderakerele" target="_blank" rel="noopener noreferrer" className="cta-btn" style={{ background: '#0a66c2', borderColor: '#0a66c2', color: '#fff' }}>LinkedIn Profile ↗</a>
+                </div>
             </div>
+
+            <Footer />
         </div>
     )
 }

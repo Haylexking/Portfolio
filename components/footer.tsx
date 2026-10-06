@@ -20,8 +20,15 @@ export default function Footer() {
         >
           Résumé
         </a>
+        <a 
+          href="https://www.linkedin.com/in/alexanderakerele" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
       </div>
-      <span className="f-copy">© 2025 Alexander Akerele — All rights reserved.</span>
+      <span className="f-copy">© {new Date().getFullYear()} Alexander Akerele — All rights reserved.</span>
     </footer>
   )
 }

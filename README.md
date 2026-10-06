@@ -37,7 +37,9 @@ I approach design with intention — combining UX research, interface design, an
 
 ---
 
-📁 **View full portfolio**: [portfolio-eight-rho-87.vercel.app](https://portfolio-eight-rho-87.vercel.app/)
+📁 **View full portfolio**: [portfolio-eight-rho-87.vercel.app](https://portfolio-eight-rho-87.vercel.app/)  
+💼 **LinkedIn**: [linkedin.com/in/alexanderakerele](https://www.linkedin.com/in/alexanderakerele)  
+✉️ **Email**: [alexakerele24@gmail.com](mailto:alexakerele24@gmail.com)
 
 ---
 

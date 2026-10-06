@@ -38,7 +38,12 @@ html { scroll-behavior: smooth; }
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  cursor: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-portfolio {
+    cursor: none;
+  }
 }
 
 /* ── CUSTOM CURSOR ────────────────────────────────────── */
@@ -65,6 +70,11 @@ html { scroll-behavior: smooth; }
 }
 .home-portfolio:has(a:hover) .cursor { width: 16px; height: 16px; }
 .home-portfolio:has(a:hover) .cursor-ring { width: 50px; height: 50px; border-color: rgba(114,213,96,0.25); }
+
+@media (hover: none) or (pointer: coarse) or (max-width: 768px) {
+  .cursor, .cursor-ring { display: none !important; }
+  .home-portfolio { cursor: auto !important; }
+}
 
 /* ── GRAIN OVERLAY ────────────────────────────────────── */
 .home-portfolio::before {

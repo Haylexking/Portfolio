@@ -12,14 +12,14 @@ const projectsData = [
     name: "Tradestack",
     type: "Website & Mobile App",
     typeClass: "green",
-    desc: "Fintech platform designed to simplify trading and investment management for everyday users. Designed intuitive user flows, responsive layouts, and cross-platform visual consistency.",
-    tags: ["Fintech", "Web & Mobile", "6 Months", "Product Designer"],
-    link: "https://usetradestack.com",
-    linkText: "Visit Website ↗",
-    emo: "📈",
-    cats: ["web", "mobile", "fintech"],
-    size: "pc-xl",
-    external: true
+    desc: "West African fintech platform powering instant crypto-to-Naira liquidation (BTC, ETH, USDT), verified gift card trading, and cross-border China factory pre-orders. End-to-end design across iOS, Android, and web.",
+    tags: ["Crypto & Gift Cards", "Cross-Border FX", "iOS & Android", "Product Designer"],
+    link: "/work/tradestack",
+    linkText: "View Case Study ↗",
+    emo: "⚡",
+    img: "/images/tradestack-mockup.png",
+    cats: ["case-study", "web", "mobile", "fintech"],
+    size: "pc-xl"
   },
   {
     id: "onamini",
@@ -32,12 +32,28 @@ const projectsData = [
     link: "/work/onamini",
     linkText: "View Case Study ↗",
     emo: "🤝",
+    img: "/images/onamini-mockup.png",
     cats: ["case-study", "fintech"],
     size: "pc-md"
   },
   {
-    id: "lockedin",
+    id: "ats",
     num: "03",
+    name: "Personal ATS",
+    type: "AI Platform · Case Study",
+    typeClass: "green",
+    desc: "Intelligent multi-model AI resume matching & optimization engine. 3-pass evaluation, authentic metric protection, and recruiter strategy commentary across 8 industry lenses.",
+    tags: ["AI Systems", "Multi-Model LLM", "Product Design"],
+    link: "/work/ats",
+    linkText: "View Case Study ↗",
+    emo: "🎯",
+    img: "/images/onamini-laptop.png",
+    cats: ["case-study", "web"],
+    size: "pc-lg"
+  },
+  {
+    id: "lockedin",
+    num: "04",
     name: "LockedIn",
     type: "Mobile · Case Study",
     typeClass: "default",
@@ -46,12 +62,13 @@ const projectsData = [
     link: "/work/lockedin",
     linkText: "View Case Study ↗",
     emo: "🔒",
+    img: "/images/haylex-imagery.png",
     cats: ["case-study", "mobile"],
     size: "pc-sm"
   },
   {
     id: "daycare",
-    num: "04",
+    num: "05",
     name: "Dammy's Daycare",
     type: "Landing Page",
     typeClass: "yellow",
@@ -60,82 +77,40 @@ const projectsData = [
     link: "/work/dammys-daycare",
     linkText: "View Project ↗",
     emo: "👶",
+    img: "/dammys-hero.png",
     cats: ["web"],
     size: "pc-lg"
   },
   {
     id: "idonate",
-    num: "05",
+    num: "06",
     name: "iDonate",
     type: "Mobile · Case Study",
     typeClass: "default",
-    desc: "User-friendly charity platform connecting communities through item donations. Designed to enhance accessibility and community engagement.",
-    tags: ["Mobile App", "Social Impact"],
+    desc: "Community donation app connecting donors with local charities. Designed intuitive item cataloging, pickup scheduling, and transparency tracking.",
+    tags: ["Mobile App", "Community Impact", "Case Study"],
     link: "https://behance.net/gallery/152008977/iDonate-App-Case-Study",
     linkText: "View on Behance ↗",
     emo: "❤️",
+    img: "/images/idonate-mockup.png",
     cats: ["case-study", "mobile"],
     size: "pc-lg",
     external: true
   },
   {
     id: "ondo-state",
-    num: "06",
+    num: "07",
     name: "Ondo State MoI",
-    type: "GovTech",
+    type: "GovTech · Production",
     typeClass: "yellow",
-    desc: "Platform for citizens to access state news, historical data, and directories of parastatals for the Ondo State Ministry of Information.",
-    tags: ["GovTech", "Information Architecture"],
+    desc: "Official digital portal for citizens to access verified state news, executive briefings, and parastatal directories for the Ondo State Ministry of Information.",
+    tags: ["GovTech", "Information Architecture", "Live Web"],
     link: "https://ondo-moi-ya31.vercel.app/",
-    linkText: "Visit Site ↗",
+    linkText: "Visit Live Site ↗",
     emo: "🏛️",
+    img: "/images/ondo-state-mockup.png",
     cats: ["govtech", "web"],
     size: "pc-lg",
-    external: true
-  },
-  {
-    id: "kukeat",
-    num: "07",
-    name: "Kukeat",
-    type: "E-commerce",
-    typeClass: "default",
-    desc: "Seamless foodstuff ordering platform with speedy home delivery. Streamlining market ordering for everyday users.",
-    tags: ["E-commerce", "Delivery"],
-    link: "https://kukeat.com",
-    linkText: "Visit Site ↗",
-    emo: "🛒",
-    cats: ["web", "mobile"],
-    size: "pc-sm",
-    external: true
-  },
-  {
-    id: "medirack",
-    num: "08",
-    name: "Medirack",
-    type: "HealthTech",
-    typeClass: "green",
-    desc: "About page for a health-tech brand. Clean, trust-focused design supporting the brand's mission in healthcare technology.",
-    tags: ["HealthTech", "Landing Page"],
-    link: "https://www.behance.net/gallery/176953193/About-Us-Page-Design",
-    linkText: "View on Behance ↗",
-    emo: "🏥",
-    cats: ["healthtech", "web"],
-    size: "pc-sm",
-    external: true
-  },
-  {
-    id: "burlux",
-    num: "09",
-    name: "Burlux",
-    type: "Landing Page",
-    typeClass: "yellow",
-    desc: "Clean, premium landing page design for a luxury brand. Focused on visual polish and brand communication.",
-    tags: ["Web Design", "Landing Page"],
-    link: "https://www.behance.net/gallery/207692127/Burlux-Website",
-    linkText: "View on Behance ↗",
-    emo: "✨",
-    cats: ["web"],
-    size: "pc-sm",
     external: true
   }
 ];
@@ -227,10 +202,10 @@ export default function PortfolioPage() {
               </h1>
             </div>
             <div className="wh-bottom rv d1">
-              <p className="wh-desc">8 projects. 5+ years. 7 industries. Every case study documents real decisions, real constraints, and real outcomes — not just pretty screens.</p>
+              <p className="wh-desc">7 curated flagship projects. 5+ years. 6 industries. Every project documents real decisions, real constraints, and real outcomes — putting quality and craft first.</p>
               <div className="wh-stats">
                 <div className="ws">
-                  <div className="ws-n">8</div>
+                  <div className="ws-n">7</div>
                   <div className="ws-l">Projects</div>
                 </div>
                 <div className="ws">
@@ -238,7 +213,7 @@ export default function PortfolioPage() {
                   <div className="ws-l">Years</div>
                 </div>
                 <div className="ws">
-                  <div className="ws-n">7</div>
+                  <div className="ws-n">6</div>
                   <div className="ws-l">Industries</div>
                 </div>
               </div>
@@ -249,7 +224,7 @@ export default function PortfolioPage() {
         <div className="filter-strip">
           <div className="wrap">
             <div className="filter-inner">
-              {["all", "case-study", "web", "mobile", "fintech", "govtech", "healthtech"].map(cat => (
+              {["all", "case-study", "web", "mobile", "fintech", "govtech"].map(cat => (
                 <button 
                   key={cat}
                   className={`filter-btn ${filter === cat ? "active" : ""}`}
@@ -275,7 +250,11 @@ export default function PortfolioPage() {
                   <div className="pc-img">
                     <span className="pc-num-overlay">{p.num}</span>
                     <span className={`pc-type-overlay ${p.typeClass}`}>{p.type}</span>
-                    <span className="pc-img-placeholder" style={p.emo === "🔒" ? {fontSize: "56px"} : {}}>{p.emo}</span>
+                    {p.img ? (
+                      <img src={p.img} alt={p.name} />
+                    ) : (
+                      <span className="pc-img-placeholder" style={p.emo === "🔒" ? {fontSize: "56px"} : {}}>{p.emo}</span>
+                    )}
                   </div>
                   <div className="pc-body">
                     <div>
@@ -332,7 +311,10 @@ export default function PortfolioPage() {
           <div className="cta-inner rv">
             <h2 className="cta-h">Ready to build<br/>something <span className="green">extraordinary?</span></h2>
             <p className="cta-sub">I'm currently open to new opportunities and interesting projects.</p>
-            <a href="mailto:alexakerele24@gmail.com" className="btn-glow">Get In Touch</a>
+            <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+              <a href="mailto:alexakerele24@gmail.com" className="btn-glow">Get In Touch</a>
+              <a href="https://www.linkedin.com/in/alexanderakerele" target="_blank" rel="noopener noreferrer" className="btn-glass">Connect on LinkedIn ↗</a>
+            </div>
           </div>
         </section>
 

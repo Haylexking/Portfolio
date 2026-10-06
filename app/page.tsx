@@ -106,6 +106,7 @@ export default function Home() {
       <div className="hero-btns">
         <Link href="/work" className="btn-glow">View Work ↓</Link>
         <a href="mailto:alexakerele24@gmail.com" className="btn-glass">Get in touch</a>
+        <a href="https://www.linkedin.com/in/alexanderakerele" target="_blank" rel="noopener noreferrer" className="btn-glass">LinkedIn ↗</a>
       </div>
     </div>
     <div className="hero-stats rv d1">
@@ -114,7 +115,7 @@ export default function Home() {
         <div className="h-stat-l">Years designing</div>
       </div>
       <div className="h-stat">
-        <div className="h-stat-n">12+</div>
+        <div className="h-stat-n">9+</div>
         <div className="h-stat-l">Projects shipped</div>
       </div>
       <div className="h-stat">
@@ -169,26 +170,32 @@ export default function Home() {
   <div className="bento rv d1">
 
     {/* Tradestack — featured */}
-    <a href="https://usetradestack.com" target="_blank" rel="noopener noreferrer" className="bc bc-featured">
-      <div className="bc-body">
+    <div className="bc bc-featured">
+      <div className="bc-body" style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "24px", alignItems: "center" }}>
         <div>
           <span className="bc-type green">Fintech Platform · 2025</span>
           <div className="bc-num">01 —</div>
           <div className="bc-title">Tradestack</div>
-          <p className="bc-desc">Fintech platform designed to simplify trading and investment management. End-to-end product design across web and mobile, creating intuitive user flows and responsive layouts.</p>
+          <p className="bc-desc">West African fintech platform for instant crypto liquidation (BTC, ETH, USDT to Naira), gift card trading, and cross-border China factory pre-orders. End-to-end product design across web and mobile.</p>
           <div className="bc-tags">
-            <span className="bc-tag">Fintech</span>
+            <span className="bc-tag">Crypto & Gift Cards</span>
+            <span className="bc-tag">Cross-Border FX</span>
             <span className="bc-tag">Web & Mobile</span>
-            <span className="bc-tag">6 Months</span>
-            <span className="bc-tag">Product Designer</span>
+            <span className="bc-tag">Lead Product Designer</span>
           </div>
-          <span className="bc-link">Visit Website ↗</span>
+          <div style={{ display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap" }}>
+            <Link href="/work/tradestack" className="bc-link">View Case Study ↗</Link>
+            <a href="https://usetradestack.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: "12px", color: "var(--ink-2)", textDecoration: "underline" }}>Visit Live Site</a>
+          </div>
         </div>
+        <Link href="/work/tradestack" className="bc-visual" style={{ minHeight: "220px", display: "flex", borderRadius: "14px", overflow: "hidden" }}>
+          <img src="/images/tradestack-mockup.png" alt="Tradestack Fintech Mockup" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </Link>
       </div>
-    </a>
+    </div>
 
     {/* Onamini — side top */}
-    <a href="/work/onamini" className="bc bc-side-top">
+    <Link href="/work/onamini" className="bc bc-side-top">
       <div className="bc-body" style={{ justifyContent: "space-between" }}>
         <div>
           <span className="bc-type green">UI/UX Case Study · 2024</span>
@@ -202,10 +209,10 @@ export default function Home() {
         </div>
         <span className="bc-link">View Case Study ↗</span>
       </div>
-    </a>
+    </Link>
 
     {/* LockedIn — side bot */}
-    <a href="/work/lockedin" className="bc bc-side-bot">
+    <Link href="/work/lockedin" className="bc bc-side-bot">
       <div className="bc-body" style={{ justifyContent: "space-between" }}>
         <div>
           <span className="bc-type">UI/UX Case Study · 2025</span>
@@ -219,10 +226,10 @@ export default function Home() {
         </div>
         <span className="bc-link">View Case Study ↗</span>
       </div>
-    </a>
+    </Link>
 
     {/* Dammy's Daycare — sm-1 */}
-    <a href="/work/dammys-daycare" className="bc bc-sm-1">
+    <Link href="/work/dammys-daycare" className="bc bc-sm-1">
       <div className="bc-body" style={{ justifyContent: "space-between" }}>
         <div>
           <span className="bc-type yellow">Landing Page · 2025</span>
@@ -232,24 +239,24 @@ export default function Home() {
         </div>
         <span className="bc-link">View Project ↗</span>
       </div>
-    </a>
+    </Link>
 
-    {/* Info card: Industries */}
-    <div className="bc bc-sm-2 bc-info">
-      <div className="bc-body" style={{ justifyContent: "center", alignItems: "flex-start" }}>
-        <div className="bc-num">Industries covered</div>
-        <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "4px" }}>
-          <div style={{ fontSize: "13px", color: "var(--ink-2)", display: "flex", alignItems: "center", gap: "8px" }}><span style={{ color: "var(--green)", fontSize: "10px" }}>◆</span> Fintech · Web3</div>
-          <div style={{ fontSize: "13px", color: "var(--ink-2)", display: "flex", alignItems: "center", gap: "8px" }}><span style={{ color: "var(--green)", fontSize: "10px" }}>◆</span> GovTech · HealthTech</div>
-          <div style={{ fontSize: "13px", color: "var(--ink-2)", display: "flex", alignItems: "center", gap: "8px" }}><span style={{ color: "var(--green)", fontSize: "10px" }}>◆</span> EduTech · E-commerce</div>
-          <div style={{ fontSize: "13px", color: "var(--ink-2)", display: "flex", alignItems: "center", gap: "8px" }}><span style={{ color: "var(--green)", fontSize: "10px" }}>◆</span> Travel Tech · Mobile</div>
+    {/* Personal ATS — featured card in bento */}
+    <Link href="/work/ats" className="bc bc-sm-2">
+      <div className="bc-body" style={{ justifyContent: "space-between" }}>
+        <div>
+          <span className="bc-type green">AI Platform · 2026</span>
+          <div className="bc-num">05 —</div>
+          <div className="bc-title">Personal ATS</div>
+          <p className="bc-desc">Recruiter-grade resume matching &amp; optimization engine with 3-pass scoring and multi-model LLM reasoning.</p>
+          <div className="bc-tags" style={{ marginTop: "10px" }}>
+            <span className="bc-tag">AI Systems</span>
+            <span className="bc-tag">Multi-Model LLM</span>
+          </div>
         </div>
-        <div style={{ marginTop: "20px" }}>
-          <div style={{ fontFamily: "var(--font-display)", fontSize: "36px", fontWeight: "900", color: "var(--ink)", letterSpacing: "-1px", lineHeight: "1" }}>7</div>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: "10px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: "3px" }}>Industries</div>
-        </div>
+        <span className="bc-link">View Case Study ↗</span>
       </div>
-    </div>
+    </Link>
 
     {/* Info card: Stack */}
     <div className="bc bc-sm-3">
@@ -265,7 +272,7 @@ export default function Home() {
           <span style={{ fontFamily: "var(--font-mono)", fontSize: "9px", color: "var(--yellow)", background: "rgba(255,199,39,0.08)", border: "1px solid rgba(255,199,39,0.2)", padding: "4px 10px", borderRadius: "100px" }}>Miro</span>
         </div>
         <div style={{ display: "flex", gap: "24px", marginTop: "8px" }}>
-          <div><div style={{ fontFamily: "var(--font-display)", fontSize: "28px", fontWeight: "900", color: "var(--ink)", letterSpacing: "-1px", lineHeight: "1" }}>12+</div><div style={{ fontFamily: "var(--font-mono)", fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: "3px" }}>Projects</div></div>
+          <div><div style={{ fontFamily: "var(--font-display)", fontSize: "28px", fontWeight: "900", color: "var(--ink)", letterSpacing: "-1px", lineHeight: "1" }}>7</div><div style={{ fontFamily: "var(--font-mono)", fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: "3px" }}>Flagships</div></div>
           <div><div style={{ fontFamily: "var(--font-display)", fontSize: "28px", fontWeight: "900", color: "var(--ink)", letterSpacing: "-1px", lineHeight: "1" }}>5+</div><div style={{ fontFamily: "var(--font-mono)", fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: "0.08em", marginTop: "3px" }}>Years</div></div>
         </div>
       </div>
@@ -281,7 +288,7 @@ export default function Home() {
     <div className="rv">
       <div className="about-eyebrow">Who I am</div>
       <h2 className="about-h">Where <span className="ghost">science</span><br/>meets design.</h2>
-      <p className="about-p">I'm a biochemist turned product designer — I approach interfaces the same way I approach reactions: with curiosity, rigour, and an obsession with how things actually work. Not just how they look.</p>
+      <p className="about-p">I&apos;m a biochemist turned product designer — I approach digital interfaces the same way I approach complex metabolic systems: with empirical rigour, hypothesis testing, and an obsession with how things actually function under real constraints. Not just how they look.</p>
       <div className="about-chips">
         <span className="a-chip">Figma</span>
         <span className="a-chip">Notion</span>
@@ -304,7 +311,7 @@ export default function Home() {
       </div>
       <div className="glass-row">
         <div className="gr-label">Experience</div>
-        <div className="gr-val">5+ years · 8 projects</div>
+        <div className="gr-val">5+ years · 9+ shipped projects</div>
       </div>
       <div className="glass-row">
         <div className="gr-label">Location</div>
@@ -416,6 +423,7 @@ export default function Home() {
     <p className="cta-sub">Whether you're building from scratch or untangling an existing product — let's make something worth remembering.</p>
     <div className="cta-actions">
       <a href="mailto:alexakerele24@gmail.com" className="btn-glow">Start a conversation →</a>
+      <a href="https://www.linkedin.com/in/alexanderakerele" target="_blank" rel="noopener noreferrer" className="btn-glass">LinkedIn Profile ↗</a>
       <a href="https://drive.google.com/file/d/19FNWhoxPL1cFg6tGDUYwHIH8Oz80onug/view?usp=sharing" target="_blank" className="btn-glass">Download Résumé</a>
     </div>
   </div>

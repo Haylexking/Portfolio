@@ -7,7 +7,7 @@ import Link from "next/link"
 export default function DammysDaycareCaseStudy() {
   return (
     <div className="daycare-page min-h-screen bg-white text-neutral-900 selection:bg-amber-200 selection:text-neutral-900">
-      <Header />
+      <Header isLight={true} />
 
       <main className="pt-24 pb-32">
         <section className="max-w-6xl mx-auto px-6 pt-16 pb-20">
@@ -1229,18 +1229,32 @@ export default function DammysDaycareCaseStudy() {
                 I'm available for freelance projects and full-time roles. Let's
                 build something great.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                 <a
-                  href="mailto:hello@example.com"
+                  href="mailto:alexakerele24@gmail.com"
                   className="inline-flex items-center justify-center gap-2 bg-neutral-900 hover:bg-neutral-800 text-white font-semibold py-3.5 px-8 rounded-full transition-all hover:shadow-lg text-sm"
                 >
                   Get in Touch
                 </a>
+                <a
+                  href="https://www.linkedin.com/in/alexanderakerele"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded-full transition-all text-sm"
+                >
+                  Connect on LinkedIn ↗
+                </a>
                 <Link
-                  href="/work"
+                  href="/work/lockedin"
                   className="inline-flex items-center justify-center gap-2 bg-white border border-neutral-200 hover:border-neutral-300 text-neutral-700 font-semibold py-3.5 px-8 rounded-full transition-all text-sm"
                 >
-                  Back to My Work
+                  Next Project: LockedIn →
+                </Link>
+                <Link
+                  href="/work"
+                  className="inline-flex items-center justify-center gap-2 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 font-semibold py-3.5 px-6 rounded-full transition-all text-sm"
+                >
+                  All Projects
                 </Link>
               </div>
             </div>
@@ -1250,13 +1264,15 @@ export default function DammysDaycareCaseStudy() {
       <footer className="border-t border-neutral-100 py-10 mt-8">
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
           <p>
-            <span>© 2026 </span>
-            <span className="font-medium text-neutral-600">UX Portfolio</span>
+            <span>© {new Date().getFullYear()} </span>
+            <span className="font-medium text-neutral-800">Alexander Akerele — The Biochemist UX</span>
             <span> — All rights reserved.</span>
           </p>
-          <p className="font-medium text-neutral-500">
-            Dammy's Daycare Case Study
-          </p>
+          <div className="flex gap-4">
+            <Link href="/work" className="hover:text-neutral-900 transition-colors">Work</Link>
+            <a href="https://www.linkedin.com/in/alexanderakerele" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-900 transition-colors">LinkedIn</a>
+            <a href="mailto:alexakerele24@gmail.com" className="hover:text-neutral-900 transition-colors">Email</a>
+          </div>
         </div>
       </footer>
     </div>

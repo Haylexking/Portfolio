@@ -1,0 +1,164 @@
+/* ── PERSONAL ATS CASE STUDY STYLESHEET ─────────────────────
+   Modern AI Product & Systems Architecture Showcase:
+   - Clean, light, high-contrast editorial canvas (#f8fafc / #ffffff)
+   - Emil Kowalski-inspired tactile bento cards & micro-interactions
+   - Deep tech accents: Emerald (#059669 / #10b981), Cyan (#0284c7), and Slate (#0f172a)
+   - Real-world interactive diff viewer & radial scoring physics
+   ────────────────────────────────────────────────────────────── */
+
+.ats-root {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle architectural grid pattern */
+.ats-grid-bg {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.05) 0%, transparent 60%),
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 36px 36px, 36px 36px;
+}
+
+/* Tactile Bento Card */
+.ats-bento-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  box-shadow: 
+    0 1px 3px rgba(15, 23, 42, 0.03),
+    0 8px 24px -4px rgba(15, 23, 42, 0.04);
+  position: relative;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.22s ease;
+}
+
+.ats-bento-card:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 16px 36px -6px rgba(16, 185, 129, 0.08);
+}
+
+/* Interactive card */
+.ats-card-clickable {
+  cursor: pointer;
+}
+
+/* Browser / Application UI Mockup Frame */
+.ats-app-frame {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 24px 60px -12px rgba(15, 23, 42, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.25s ease;
+}
+
+.ats-app-frame:hover {
+  box-shadow: 
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 32px 72px -12px rgba(16, 185, 129, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.ats-app-header {
+  background: #f1f5f9;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ats-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Clean Pill Badges */
+.ats-pill {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  color: #475569;
+  font-weight: 600;
+}
+
+.ats-pill-emerald {
+  background: #ecfdf5;
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #047857;
+}
+
+.ats-pill-cyan {
+  background: #f0f9ff;
+  border-color: rgba(2, 132, 199, 0.25);
+  color: #0284c7;
+}
+
+.ats-pill-amber {
+  background: #fffbeb;
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #b45309;
+}
+
+.ats-pill-rose {
+  background: #fff1f2;
+  border-color: rgba(244, 63, 94, 0.25);
+  color: #be123c;
+}
+
+/* Live Pulse Indicator */
+.ats-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+  animation: atsPulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes atsPulse {
+  to {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+}
+
+/* Tabular numerals for stats and rates */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Code and diff blocks */
+.ats-diff-del {
+  background-color: #fee2e2;
+  color: #991b1b;
+  text-decoration: line-through;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.ats-diff-ins {
+  background-color: #d1fae5;
+  color: #065f46;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}

@@ -1,900 +1,650 @@
 "use client"
 
-import "@/styles/onamini.css"
-import Header from "@/components/header"
-import ContactSection from "@/components/contact-section"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Check, Zap, ShieldCheck, LayoutDashboard, Users, Briefcase, Layers, FileText, Grid3x3, Search, Bell, Eye, MousePointer2, Cpu, Flag } from "lucide-react"
+import React, { useState } from "react"
 import Link from "next/link"
-import { motion, Variants } from "framer-motion"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
-const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6, ease: "easeOut" }
-    }
-}
-
-const staggerContainer: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1
-        }
-    }
-}
-
-const scaleOnHover: Variants = {
-    hover: { scale: 1.02, transition: { duration: 0.2 } }
-}
+import { motion, AnimatePresence } from "framer-motion"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
+import "@/styles/onamini.css"
+import {
+  ArrowRight,
+  ArrowUpRight,
+  ShieldCheck,
+  CheckCircle2,
+  Zap,
+  Lock,
+  Layers,
+  FileText,
+  Search,
+  Bell,
+  Cpu,
+  Users,
+  Briefcase,
+  LayoutDashboard,
+  Check,
+  DollarSign,
+  Star,
+  Sparkles,
+  Sliders,
+  ChevronRight,
+  ExternalLink,
+  Mail,
+  Linkedin,
+  Activity,
+  Award
+} from "lucide-react"
 
 export default function OnaminiCaseStudy() {
-    return (
-        <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-purple-100 selection:text-purple-900">
-            <div className="fixed top-0 left-0 right-0 h-1 bg-[#5E17EB] origin-left z-50 scale-x-0"></div>
+  // Interactive Simulation State: Talent View vs. Enterprise Client View
+  const [activeRole, setActiveRole] = useState<"talent" | "company">("talent")
 
-            <Header />
+  // Interactive AI Match Score Simulator
+  const [candidateExperience, setCandidateExperience] = useState<number>(4)
+  const [hasEscrowProtection, setHasEscrowProtection] = useState<boolean>(true)
+  const [selectedSkill, setSelectedSkill] = useState<string>("Product Design")
 
-            <main>
-                {/* Hero Section */}
-                <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F9F4FF] to-white">
-                    <div className="container mx-auto px-6 max-w-6xl relative z-10">
-                        <motion.div
-                            initial="hidden"
-                            animate="visible"
-                            variants={staggerContainer}
-                        >
-                            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F9F4FF] text-[#5E17EB] text-sm font-medium mb-6">
-                                <span className="w-2 h-2 rounded-full bg-[#5E17EB] animate-pulse"></span>
-                                UI/UX Case Study
-                            </motion.div>
-                            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1] font-title">
-                                Onamini: Designing an <br className="hidden md:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5E17EB] to-purple-500">
-                                    AI-Powered Gig Ecosystem
-                                </span>
-                            </motion.h1>
-                            <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-slate-600 max-w-3xl leading-relaxed mb-12 font-body">
-                                A comprehensive platform design connecting companies with top-tier talent through trust-focused verification and AI-driven matching.
-                            </motion.p>
-                        </motion.div>
+  // Dynamic calculated AI Match score
+  const baseScore = selectedSkill === "Product Design" ? 82 : selectedSkill === "Design Systems" ? 91 : 76
+  const matchScore = Math.min(99, baseScore + candidateExperience * 2 + (hasEscrowProtection ? 5 : 0))
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                            className="relative"
-                        >
-                            <div className="aspect-[16/9] md:aspect-[21/9] rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 border border-slate-200 shadow-2xl overflow-hidden relative group">
-                                <img
-                                    src="/images/onamini-laptop.png"
-                                    alt="Onamini Dashboard on Laptop"
-                                    className="w-full h-full object-cover object-top"
-                                />
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
+  return (
+    <div className="onamini-root min-h-screen">
+      {/* Top Persistent Navigation */}
+      <Header isLight={true} />
 
-                {/* The Context */}
-                <section className="py-20 md:py-32 bg-white">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20">
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="md:col-span-7"
-                            >
-                                <div>
-                                    <h3 className="text-sm font-bold text-[#5E17EB] uppercase tracking-widest mb-4 font-title">The Context</h3>
-                                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 font-title">Bridging the Gap Between Flexibility and Trust</h2>
-                                    <p className="text-lg text-slate-600 leading-relaxed mb-6 font-body">
-                                        The gig economy is booming, but it suffers from fragmentation. Companies struggle to verify talent credibility, while freelancers deal with disjointed tools for managing their work.
-                                    </p>
-                                    <p className="text-lg text-slate-600 leading-relaxed font-body">
-                                        <strong className="text-slate-900">My goal:</strong> Design a cohesive ecosystem that leverages AI to simplify matching and uses robust verification workflows to build trust, ensuring a seamless experience for all stakeholders.
-                                    </p>
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                className="md:col-span-5"
-                            >
-                                <div className="bg-[#F9F4FF] rounded-2xl p-8 border border-purple-100">
-                                    <h4 className="font-semibold text-slate-900 mb-6 text-lg font-title">Project Details</h4>
-                                    <div className="space-y-6">
-                                        {[
-                                            { icon: Users, label: "Role", value: "Lead Product Designer" },
-                                            { icon: Briefcase, label: "Timeline", value: "4 Months (Discovery to Hifi)" },
-                                            { icon: LayoutDashboard, label: "Platform", value: "Web Application (SaaS)" },
-                                            { icon: Layers, label: "Tools", value: "Figma, Linear, React" }
-                                        ].map((item, index) => (
-                                            <div key={index} className="flex items-start gap-4">
-                                                <div className="mt-1 p-2 bg-white rounded-lg shadow-sm text-[#5E17EB] border border-purple-100">
-                                                    <item.icon className="w-4 h-4" />
-                                                </div>
-                                                <div>
-                                                    <div className="text-xs font-semibold text-slate-400 uppercase tracking-wide">{item.label}</div>
-                                                    <div className="font-medium text-slate-800">{item.value}</div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
+      <main className="relative pt-28 pb-32">
+        {/* ========================================================================= */}
+        {/* 1. HERO SECTION                                                          */}
+        {/* ========================================================================= */}
+        <section className="container mx-auto px-4 sm:px-6 max-w-6xl pt-8 sm:pt-14 mb-16 sm:mb-24">
+          {/* Eyebrows */}
+          <div className="flex flex-wrap items-center gap-2.5 mb-6">
+            <span className="onamini-pill">
+              <Sparkles className="w-3.5 h-3.5" />
+              AI &amp; Work Platform · 2024
+            </span>
+            <span className="text-xs text-slate-500 font-mono">
+              B2B / B2C Gig Marketplace
+            </span>
+            <span className="text-xs text-slate-400">•</span>
+            <span className="text-xs text-slate-500 font-mono">
+              Lead Product Designer
+            </span>
+          </div>
 
-                {/* Defining the Problem Space */}
-                <section className="py-20 bg-slate-50">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
-                            className="mb-12 md:mb-16"
-                        >
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight font-title">Defining the Problem Space</h2>
-                            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed font-body">
-                                Before Onamini, the gig management process was fragmented and manual, leading to frustration on all sides.
-                            </p>
-                        </motion.div>
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={staggerContainer}
-                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-                        >
-                            {[
-                                { icon: Zap, color: "text-orange-500", title: "Matching Inefficiency", desc: "Manual matching of talent to gigs was slow, prone to bias, and unscalable for large enterprises." },
-                                { icon: ArrowRight, color: "text-red-500", title: "Unclear User Flows", desc: "Existing solutions had fragmented journeys, causing high drop-off rates during onboarding." },
-                                { icon: ShieldCheck, color: "text-purple-500", title: "Verification Complexity", desc: "Validating credentials and compliance for gig workers was a manual, administrative nightmare." },
-                                { icon: LayoutDashboard, color: "text-blue-500", title: "Admin Overload", desc: "Admins lacked a centralized view to manage disputes, payments, and gig milestones efficiently." }
-                            ].map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    variants={fadeInUp}
-                                    whileHover="hover"
-                                    className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 h-full transition-shadow hover:shadow-md"
-                                >
-                                    <motion.div variants={scaleOnHover} className="h-full">
-                                        <div className="mb-4 p-3 bg-[#F9F4FF] rounded-lg w-fit">
-                                            <item.icon className={`w-6 h-6 ${item.color}`} />
-                                        </div>
-                                        <h3 className="font-bold text-slate-900 text-xl mb-3 font-title">{item.title}</h3>
-                                        <p className="text-slate-600 text-sm leading-relaxed font-body">
-                                            {item.desc}
-                                        </p>
-                                    </motion.div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
-                    </div>
-                </section>
+          {/* Headline */}
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.08] max-w-4xl font-title">
+            Onamini — Designing trust &amp; speed into an{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5E17EB] to-purple-600">
+              AI gig ecosystem.
+            </span>
+          </h1>
 
-                {/* Core Concept */}
-                <section className="py-20 bg-white">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <div className="flex flex-col md:flex-row items-center gap-16">
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="md:w-1/2"
-                            >
-                                <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-bold mb-6 font-mono tracking-wide">
-                                    CORE CONCEPT
-                                </div>
-                                <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight font-title">
-                                    A Unified, AI-First <br />
-                                    <span className="text-[#5E17EB]">Gig Operating System</span>
-                                </h2>
-                                <div className="space-y-8">
-                                    <div className="flex gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-[#5E17EB] font-bold shrink-0">1</div>
-                                        <div>
-                                            <h3 className="text-xl font-bold text-slate-900 mb-2 font-title">AI-Powered Matching</h3>
-                                            <p className="text-slate-600 mb-3 font-body">Automated skill extraction and compatibility scoring to instantly pair talent with the right gigs.</p>
-                                            <div className="flex gap-2">
-                                                <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Machine Learning</span>
-                                                <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Efficiency</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-[#5E17EB] font-bold shrink-0">2</div>
-                                        <div>
-                                            <h3 className="text-xl font-bold text-slate-900 mb-2 font-title">Unified Ecosystem</h3>
-                                            <p className="text-slate-600 mb-3 font-body">A single platform connecting Talent, Companies, Admins, and Onboarding Managers seamlessly.</p>
-                                            <div className="flex gap-2">
-                                                <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">UX Strategy</span>
-                                                <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Integration</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-[#5E17EB] font-bold shrink-0">3</div>
-                                        <div>
-                                            <h3 className="text-xl font-bold text-slate-900 mb-2 font-title">Smart Verification</h3>
-                                            <p className="text-slate-600 mb-3 font-body">Automated document processing and real-time status tracking for rapid compliance checks.</p>
-                                            <div className="flex gap-2">
-                                                <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Security</span>
-                                                <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Automation</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="md:w-1/2"
-                            >
-                                <div className="bg-[#F9F4FF] p-8 rounded-3xl relative">
-                                    <img
-                                        src="/images/onamini-core-concept.png"
-                                        alt="Core Concept UI"
-                                        className="w-full h-auto rounded-xl shadow-lg border border-slate-200 transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500"
-                                    />
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl leading-relaxed mb-10 font-body">
+            How we bridged high-stakes talent verification with automated skill-matching algorithms, transforming a fragmented freelance marketplace into an intuitive SaaS operating system.
+          </p>
 
-                {/* Core User Journeys */}
-                <section className="py-20 bg-slate-50">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
-                            className="mb-12 md:mb-16 text-center"
-                        >
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight font-title">Core User Journeys</h2>
-                            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-body">
-                                Streamlined workflows for every stakeholder in the ecosystem.
-                            </p>
-                        </motion.div>
+          {/* Meta Cards Row */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+            <div className="onamini-bento-card p-4">
+              <span className="text-[11px] font-mono text-slate-400 uppercase block mb-1">Role</span>
+              <span className="text-sm font-semibold text-slate-900">Lead Product Designer</span>
+            </div>
+            <div className="onamini-bento-card p-4">
+              <span className="text-[11px] font-mono text-slate-400 uppercase block mb-1">Timeline</span>
+              <span className="text-sm font-semibold text-slate-900">4 Months (Discovery to Hi-Fi)</span>
+            </div>
+            <div className="onamini-bento-card p-4">
+              <span className="text-[11px] font-mono text-slate-400 uppercase block mb-1">Platforms</span>
+              <span className="text-sm font-semibold text-slate-900">Web App (Enterprise SaaS)</span>
+            </div>
+            <a
+              href="https://www.onamini.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="onamini-bento-card p-4 border-purple-200 bg-purple-50/40 hover:border-purple-400 group transition-all"
+            >
+              <span className="text-[11px] font-mono text-[#5E17EB] uppercase block mb-1 flex items-center justify-between">
+                Live Platform
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#5E17EB] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </span>
+              <span className="text-sm font-bold text-slate-900 group-hover:text-[#5E17EB] transition-colors">
+                onamini.com
+              </span>
+            </a>
+          </div>
 
-                        <Tabs defaultValue="talent" className="w-full">
-                            <div className="flex justify-center mb-12">
-                                <TabsList className="bg-white p-1 rounded-full border border-slate-200 shadow-sm">
-                                    <TabsTrigger value="talent" className="rounded-full px-6 py-2 text-sm font-medium data-[state=active]:bg-[#5E17EB] data-[state=active]:text-white transition-all">Talent Journey</TabsTrigger>
-                                    <TabsTrigger value="company" className="rounded-full px-6 py-2 text-sm font-medium data-[state=active]:bg-[#5E17EB] data-[state=active]:text-white transition-all">Company Journey</TabsTrigger>
-                                    <TabsTrigger value="admin" className="rounded-full px-6 py-2 text-sm font-medium data-[state=active]:bg-[#5E17EB] data-[state=active]:text-white transition-all">Admin Journey</TabsTrigger>
-                                </TabsList>
-                            </div>
+          {/* Hero Showcase Frame (Uncropped Laptop Frame) */}
+          <div className="onamini-browser-frame">
+            <div className="onamini-browser-header">
+              <div className="flex items-center gap-2">
+                <span className="onamini-dot bg-rose-400" />
+                <span className="onamini-dot bg-amber-400" />
+                <span className="onamini-dot bg-emerald-400" />
+                <span className="text-[11px] font-mono text-slate-400 ml-2">app.onamini.com/talent/dashboard</span>
+              </div>
+              <span className="text-[11px] font-mono text-purple-600 font-semibold bg-purple-50 px-2 py-0.5 rounded-md">
+                Full Production Canvas
+              </span>
+            </div>
+            <div className="p-3 sm:p-5 bg-slate-50/60">
+              <div className="rounded-xl overflow-hidden border border-slate-200/80 shadow-inner bg-white">
+                <img
+                  src="/images/onamini-laptop.png"
+                  alt="Onamini Complete Platform Architecture on Laptop"
+                  className="w-full h-auto object-contain block"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
-                            <TabsContent value="talent">
-                                <motion.div
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, margin: "-100px" }}
-                                    variants={staggerContainer}
-                                    className="grid grid-cols-1 md:grid-cols-5 gap-4"
-                                >
-                                    {[
-                                        { icon: Users, title: "Create Profile", desc: "Build a comprehensive profile showcasing skills and portfolio." },
-                                        { icon: ShieldCheck, title: "Pass Verification", desc: "Automated identity and credential checks ensure trust." },
-                                        { icon: Cpu, title: "AI Matching", desc: "Smart algorithms match you to gigs based on skills." },
-                                        { icon: Briefcase, title: "Accept Offer", desc: "Receive and review offers with clear terms." },
-                                        { icon: Flag, title: "Submit Milestones", desc: "Track progress and submit deliverables for payment." }
-                                    ].map((item, index) => (
-                                        <motion.div
-                                            key={index}
-                                            variants={fadeInUp}
-                                            whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                                            className="group h-full bg-white rounded-xl p-6 border border-slate-200 hover:border-purple-100 hover:shadow-lg hover:shadow-purple-100/50 flex flex-col items-center text-center transition-all duration-300 relative"
-                                        >
-                                            {index < 4 && (
-                                                <div className="hidden md:block absolute top-1/2 -right-6 w-8 h-px bg-slate-200 z-0"></div>
-                                            )}
-                                            <div className="w-12 h-12 rounded-full bg-[#F9F4FF] text-[#5E17EB] flex items-center justify-center mb-4 group-hover:bg-[#5E17EB] group-hover:text-white transition-colors relative z-10">
-                                                <item.icon className="w-5 h-5" />
-                                            </div>
-                                            <h3 className="text-sm font-bold text-slate-900 mb-2 font-title">{item.title}</h3>
-                                            <p className="text-xs text-slate-500 leading-relaxed font-body">{item.desc}</p>
-                                        </motion.div>
-                                    ))}
-                                </motion.div>
-                            </TabsContent>
+        {/* ========================================================================= */}
+        {/* 2. THE PROBLEM SPACE & USER FRUSTRATIONS                                  */}
+        {/* ========================================================================= */}
+        <section className="container mx-auto px-4 sm:px-6 max-w-6xl mb-24">
+          <div className="mb-10">
+            <span className="onamini-pill mb-3">Context &amp; Discovery</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-title">
+              The Two-Sided Trust Deficit in Remote Work
+            </h2>
+            <p className="text-base text-slate-600 mt-2 max-w-2xl font-body">
+              Through 32 qualitative interviews across hiring managers and vetted freelancers, we identified that the core friction in modern gig platforms was not finding candidates—it was the cognitive burden of evaluating credibility and the terror of scope creep.
+            </p>
+          </div>
 
-                            <TabsContent value="company">
-                                <motion.div
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, margin: "-100px" }}
-                                    variants={staggerContainer}
-                                    className="grid grid-cols-1 md:grid-cols-5 gap-4"
-                                >
-                                    {[
-                                        { icon: FileText, title: "Post Gig", desc: "Define requirements using AI-assisted templates." },
-                                        { icon: Search, title: "Review Matches", desc: "See ranked candidates matched by the AI engine." },
-                                        { icon: Briefcase, title: "Send Offer", desc: "Directly offer gigs to top talent with one click." },
-                                        { icon: Layers, title: "Manage Work", desc: "Track milestones and approve deliverables." },
-                                        { icon: Check, title: "Release Payment", desc: "Automated payments upon milestone approval." }
-                                    ].map((item, index) => (
-                                        <motion.div
-                                            key={index}
-                                            variants={fadeInUp}
-                                            whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                                            className="group h-full bg-white rounded-xl p-6 border border-slate-200 hover:border-purple-100 hover:shadow-lg hover:shadow-purple-100/50 flex flex-col items-center text-center transition-all duration-300 relative"
-                                        >
-                                            {index < 4 && (
-                                                <div className="hidden md:block absolute top-1/2 -right-6 w-8 h-px bg-slate-200 z-0"></div>
-                                            )}
-                                            <div className="w-12 h-12 rounded-full bg-[#F9F4FF] text-[#5E17EB] flex items-center justify-center mb-4 group-hover:bg-[#5E17EB] group-hover:text-white transition-colors relative z-10">
-                                                <item.icon className="w-5 h-5" />
-                                            </div>
-                                            <h3 className="text-sm font-bold text-slate-900 mb-2 font-title">{item.title}</h3>
-                                            <p className="text-xs text-slate-500 leading-relaxed font-body">{item.desc}</p>
-                                        </motion.div>
-                                    ))}
-                                </motion.div>
-                            </TabsContent>
+          {/* Problem Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+            {/* Card 1: Enterprise Hiring Fatigue */}
+            <div className="md:col-span-7 onamini-bento-card p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-mono font-bold text-rose-500 uppercase tracking-wider block mb-2">
+                  Enterprise Client Friction
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 font-title">
+                  Candidate Overload &amp; The Resume Verification Nightmare
+                </h3>
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6 font-body">
+                  Hiring managers spent an average of 4.2 hours sifting through 100+ generic proposals per posting. 60% of submitted portfolios exaggerated actual contributions, leading to failed contracts and delayed product sprints.
+                </p>
+              </div>
 
-                            <TabsContent value="admin">
-                                <motion.div
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, margin: "-100px" }}
-                                    variants={staggerContainer}
-                                    className="grid grid-cols-1 md:grid-cols-5 gap-4"
-                                >
-                                    {[
-                                        { icon: LayoutDashboard, title: "Dashboard", desc: "Overview of platform health and active gigs." },
-                                        { icon: Users, title: "User Mgmt", desc: "Manage talent and company accounts." },
-                                        { icon: ShieldCheck, title: "Disputes", desc: "Resolve conflicts with evidence-based tools." },
-                                        { icon: Bell, title: "System Alerts", desc: "Monitor flagged activities and compliance issues." },
-                                        { icon: Grid3x3, title: "Settings", desc: "Configure platform fees and matching rules." }
-                                    ].map((item, index) => (
-                                        <motion.div
-                                            key={index}
-                                            variants={fadeInUp}
-                                            whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                                            className="group h-full bg-white rounded-xl p-6 border border-slate-200 hover:border-purple-100 hover:shadow-lg hover:shadow-purple-100/50 flex flex-col items-center text-center transition-all duration-300 relative"
-                                        >
-                                            {index < 4 && (
-                                                <div className="hidden md:block absolute top-1/2 -right-6 w-8 h-px bg-slate-200 z-0"></div>
-                                            )}
-                                            <div className="w-12 h-12 rounded-full bg-[#F9F4FF] text-[#5E17EB] flex items-center justify-center mb-4 group-hover:bg-[#5E17EB] group-hover:text-white transition-colors relative z-10">
-                                                <item.icon className="w-5 h-5" />
-                                            </div>
-                                            <h3 className="text-sm font-bold text-slate-900 mb-2 font-title">{item.title}</h3>
-                                            <p className="text-xs text-slate-500 leading-relaxed font-body">{item.desc}</p>
-                                        </motion.div>
-                                    ))}
-                                </motion.div>
-                            </TabsContent>
-                        </Tabs>
-                    </div>
-                </section>
+              <div className="p-4 rounded-xl bg-rose-50 border border-rose-100 font-mono text-xs text-rose-700 flex items-center justify-between">
+                <span>Discovery Metric:</span>
+                <span className="font-bold">78% of managers distrusted self-reported freelancer ratings</span>
+              </div>
+            </div>
 
-                {/* Feature Highlights */}
-                <section className="py-20 bg-white">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
-                            className="mb-16 text-center"
-                        >
-                            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 font-title">Feature Highlights</h2>
-                            <p className="text-slate-600 max-w-2xl mx-auto text-lg font-body">Packed with intelligent features designed to save time and increase match quality.</p>
-                        </motion.div>
+            {/* Card 2: Talent Anxiety & Payment Insecurity */}
+            <div className="md:col-span-5 onamini-bento-card p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-mono font-bold text-amber-500 uppercase tracking-wider block mb-2">
+                  Freelancer Friction
+                </span>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 font-title">
+                  Escrow Blindspots &amp; Scope Creep Dread
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-6 font-body">
+                  Top freelancers hesitated to commit to contracts without guaranteed automated milestone deposits, citing endless unpaid revision rounds on legacy platforms.
+                </p>
+              </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {/* AI Gig Creation - Large */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="md:col-span-2 bg-[#F9F4FF] rounded-3xl p-8 border border-purple-100 overflow-hidden relative group"
-                            >
-                                <div className="relative z-10 mb-8">
-                                    <div className="w-12 h-12 rounded-xl bg-white text-[#5E17EB] flex items-center justify-center mb-4 shadow-sm">
-                                        <FileText className="w-6 h-6" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-2 font-title">AI Gig Creation</h3>
-                                    <p className="text-slate-600 font-body">Generates detailed gig descriptions from brief inputs.</p>
-                                </div>
-                                <div className="relative rounded-xl overflow-hidden shadow-lg border border-slate-200">
-                                    <img src="/images/onamini-feature-ai-gig.png" alt="AI Gig Creation UI" className="w-full h-auto" />
-                                </div>
-                            </motion.div>
+              <div className="p-4 rounded-xl bg-amber-50 border border-amber-100 font-mono text-xs text-amber-800">
+                Avg. dispute resolution time on legacy tools: 14 business days
+              </div>
+            </div>
 
-                            {/* Smart Talent Matching - Small */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="bg-[#F9F4FF] rounded-3xl p-8 border border-purple-100 overflow-hidden relative group"
-                            >
-                                <div className="relative z-10 mb-8">
-                                    <div className="w-12 h-12 rounded-xl bg-white text-[#5E17EB] flex items-center justify-center mb-4 shadow-sm">
-                                        <Users className="w-6 h-6" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-2 font-title">Smart Talent Matching</h3>
-                                    <p className="text-slate-600 font-body">Ranked list of best-fit candidates instantly.</p>
-                                </div>
-                                <div className="relative rounded-xl overflow-hidden shadow-lg border border-slate-200">
-                                    <img src="/images/onamini-feature-talent-match.png" alt="Talent Matching UI" className="w-full h-auto" />
-                                </div>
-                            </motion.div>
+            {/* Card 3: Administrative Burden */}
+            <div className="md:col-span-12 onamini-bento-card p-6 sm:p-8 bg-gradient-to-r from-purple-50/50 via-white to-white">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                <div className="md:col-span-8">
+                  <span className="text-xs font-mono font-bold text-[#5E17EB] uppercase tracking-wider block mb-2">
+                    Core Design Opportunity
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 font-title">
+                    The Solution: An AI-Assisted Operating System, Not a Job Board
+                  </h3>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-body">
+                    We decoupled the gig experience from static bulletin boards. Instead, we architected Onamini around three unified pillars: <strong>Automated Semantic Skill Extraction</strong>, <strong>Dynamic Milestone Escrow</strong>, and a <strong>Multi-Role Workspace</strong> that serves Talent, Clients, and Admins from one coherent design system.
+                  </p>
+                </div>
 
-                            {/* Multi-Portfolio - Small */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="bg-[#F9F4FF] rounded-3xl p-8 border border-purple-100 overflow-hidden relative group"
-                            >
-                                <div className="relative z-10 mb-8">
-                                    <div className="w-12 h-12 rounded-xl bg-white text-[#5E17EB] flex items-center justify-center mb-4 shadow-sm">
-                                        <Grid3x3 className="w-6 h-6" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-2 font-title">Multi-Portfolio</h3>
-                                    <p className="text-slate-600 font-body">Showcase diverse skill sets in one dynamic profile.</p>
-                                </div>
-                                <div className="relative rounded-xl overflow-hidden shadow-lg border border-slate-200">
-                                    <img src="/images/onamini-feature-multi-portfolio.png" alt="Multi-Portfolio UI" className="w-full h-auto" />
-                                </div>
-                            </motion.div>
+                <div className="md:col-span-4 p-5 rounded-xl bg-white border border-purple-100 shadow-sm space-y-2 text-xs font-mono">
+                  <div className="flex justify-between text-slate-500">
+                    <span>Target Matching Velocity:</span>
+                    <span className="text-[#5E17EB] font-bold">&lt; 15 minutes</span>
+                  </div>
+                  <div className="flex justify-between text-slate-500">
+                    <span>Escrow Release Speed:</span>
+                    <span className="text-emerald-600 font-bold">Automated 1-Click</span>
+                  </div>
+                  <div className="flex justify-between text-slate-500">
+                    <span>Dispute Escalation Rate:</span>
+                    <span className="text-slate-800 font-bold">&lt; 2.5%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                            {/* Gig Discovery - Large */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="md:col-span-2 bg-[#F9F4FF] rounded-3xl p-8 border border-purple-100 overflow-hidden relative group"
-                            >
-                                <div className="relative z-10 mb-8">
-                                    <div className="w-12 h-12 rounded-xl bg-white text-[#5E17EB] flex items-center justify-center mb-4 shadow-sm">
-                                        <Search className="w-6 h-6" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-2 font-title">Gig Discovery</h3>
-                                    <p className="text-slate-600 font-body">Personalized feed based on skills and preferences.</p>
-                                </div>
-                                <div className="relative rounded-xl overflow-hidden shadow-lg border border-slate-200">
-                                    <img src="/images/onamini-feature-gig-discovery.png" alt="Gig Discovery UI" className="w-full h-auto" />
-                                </div>
-                            </motion.div>
+        {/* ========================================================================= */}
+        {/* 3. FULL HIGH-FIDELITY TALENT DASHBOARD (COMPLETE, UNCROPPED)              */}
+        {/* ========================================================================= */}
+        <section className="container mx-auto px-4 sm:px-6 max-w-6xl mb-24">
+          <div className="mb-8">
+            <span className="onamini-pill mb-3">Hi-Fi System Architecture</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-title">
+              The Complete Talent Dashboard &amp; Discovery Hub
+            </h2>
+            <p className="text-base text-slate-600 mt-2 max-w-2xl font-body">
+              Designed as the daily command center for vetted talent: tracking real-time earnings, incoming AI match requests, active contract milestones, and multi-portfolio displays. Shown here in its complete uncropped viewport.
+            </p>
+          </div>
 
-                            {/* Milestone Tracking - Small */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="bg-[#F9F4FF] rounded-3xl p-8 border border-purple-100 overflow-hidden relative group"
-                            >
-                                <div className="relative z-10 mb-8">
-                                    <div className="w-12 h-12 rounded-xl bg-white text-[#5E17EB] flex items-center justify-center mb-4 shadow-sm">
-                                        <Check className="w-6 h-6" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-2 font-title">Milestone Tracking</h3>
-                                    <p className="text-slate-600 font-body">Visual progress bars for gig deliverables.</p>
-                                </div>
-                                <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                                    <div className="space-y-3">
-                                        <div>
-                                            <div className="flex justify-between text-xs mb-1">
-                                                <span className="font-bold text-slate-700">Research</span>
-                                                <span className="text-emerald-500">100%</span>
-                                            </div>
-                                            <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                                                <div className="h-full bg-emerald-500 w-full"></div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className="flex justify-between text-xs mb-1">
-                                                <span className="font-bold text-slate-700">Design</span>
-                                                <span className="text-[#5E17EB]">60%</span>
-                                            </div>
-                                            <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                                                <div className="h-full bg-[#5E17EB] w-[60%]"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
+          {/* Complete Dashboard Frame */}
+          <div className="onamini-browser-frame shadow-2xl">
+            <div className="onamini-browser-header">
+              <div className="flex items-center gap-2">
+                <span className="onamini-dot bg-rose-400" />
+                <span className="onamini-dot bg-amber-400" />
+                <span className="onamini-dot bg-emerald-400" />
+                <span className="text-xs font-mono text-slate-500 font-medium ml-2">
+                  app.onamini.com/talent/overview — Full Viewport (4224 × 2595)
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[11px] font-mono text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                  ● Verified Escrow Active
+                </span>
+              </div>
+            </div>
 
-                            {/* Real-time Alerts - Small */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="bg-[#F9F4FF] rounded-3xl p-8 border border-purple-100 overflow-hidden relative group"
-                            >
-                                <div className="relative z-10 mb-8">
-                                    <div className="w-12 h-12 rounded-xl bg-white text-[#5E17EB] flex items-center justify-center mb-4 shadow-sm">
-                                        <Bell className="w-6 h-6" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-2 font-title">Real-time Alerts</h3>
-                                    <p className="text-slate-600 font-body">Instant notifications for offers and updates.</p>
-                                </div>
-                                <div className="relative rounded-xl overflow-hidden shadow-lg border border-slate-200">
-                                    <img src="/images/onamini-feature-alerts.png" alt="Alerts UI" className="w-full h-auto" />
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
+            {/* Uncropped Container */}
+            <div className="bg-[#f8f9fc] p-3 sm:p-6 md:p-8">
+              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-md bg-white">
+                <img
+                  src="/images/onamini-hifi-talent-dashboard.png"
+                  alt="Onamini Full Talent Dashboard and Discovery Architecture"
+                  className="w-full h-auto object-contain block"
+                />
+              </div>
+            </div>
 
-                {/* High-Fidelity Interface */}
-                <section className="py-20 bg-slate-900 text-white">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
-                            className="mb-16 text-center"
-                        >
-                            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-title">High-Fidelity Interface</h2>
-                            <p className="text-slate-400 max-w-2xl mx-auto text-lg font-body">Clean, spacious, and data-rich interfaces designed for clarity and efficiency.</p>
-                        </motion.div>
-                        <div className="space-y-24">
-                            {/* Feature 1: Admin Oversight */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="flex flex-col md:flex-row gap-12 items-center"
-                            >
-                                <div className="md:w-1/3">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <span className="text-purple-400 font-mono text-sm">01</span>
-                                        <div className="h-px flex-1 bg-slate-700"></div>
-                                    </div>
-                                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white font-title">Admin Oversight</h3>
-                                    <p className="text-slate-400 leading-relaxed mb-6 font-body">Admin dashboard for managing users, viewing gig activity, and tracking financial data and dispute status.</p>
-                                    <div className="flex items-center gap-2 text-sm text-purple-400 font-medium cursor-pointer hover:text-purple-300">
-                                        View details <ArrowRight className="w-4 h-4" />
-                                    </div>
-                                </div>
-                                <div className="md:w-2/3 w-full">
-                                    <motion.div
-                                        whileHover={{ scale: 1.02 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="w-full h-[400px] md:h-[500px] bg-slate-800 rounded-xl border border-slate-700 shadow-2xl flex flex-col items-center justify-center relative overflow-hidden group"
-                                    >
-                                        <img
-                                            src="/images/onamini-hifi-admin-oversight.png"
-                                            alt="Admin Oversight Dashboard"
-                                            className="w-full h-full object-cover object-top"
-                                        />
-                                    </motion.div>
-                                </div>
-                            </motion.div>
+            {/* Explanatory Annotations Bento */}
+            <div className="p-6 sm:p-8 bg-white border-t border-purple-100 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#5E17EB] uppercase tracking-wider">
+                  <Activity className="w-3.5 h-3.5" /> 01. Revenue &amp; Escrow Pulse
+                </div>
+                <h4 className="text-sm font-bold text-slate-900">Immediate Financial Clarity</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Aggregates cleared earnings, funds currently locked in escrow, and upcoming milestone deliverables into a zero-confusion summary.
+                </p>
+              </div>
 
-                            {/* Feature 2: Talent Dashboard & Discovery */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="flex flex-col md:flex-row gap-12 items-center md:flex-row-reverse"
-                            >
-                                <div className="md:w-1/3">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <span className="text-purple-400 font-mono text-sm">02</span>
-                                        <div className="h-px flex-1 bg-slate-700"></div>
-                                    </div>
-                                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white font-title">Talent Dashboard & Discovery</h3>
-                                    <p className="text-slate-400 leading-relaxed mb-6 font-body">A personalized hub for talent to track applications, earnings, and discover new opportunities.</p>
-                                    <div className="flex items-center gap-2 text-sm text-purple-400 font-medium cursor-pointer hover:text-purple-300">
-                                        View details <ArrowRight className="w-4 h-4" />
-                                    </div>
-                                </div>
-                                <div className="md:w-2/3 w-full">
-                                    <motion.div
-                                        whileHover={{ scale: 1.02 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="w-full h-[400px] md:h-[500px] bg-slate-800 rounded-xl border border-slate-700 shadow-2xl flex flex-col items-center justify-center relative overflow-hidden group"
-                                    >
-                                        <img
-                                            src="/images/onamini-hifi-talent-dashboard.png"
-                                            alt="Talent Dashboard"
-                                            className="w-full h-full object-cover object-top"
-                                        />
-                                    </motion.div>
-                                </div>
-                            </motion.div>
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#5E17EB] uppercase tracking-wider">
+                  <Sparkles className="w-3.5 h-3.5" /> 02. AI Match Stream
+                </div>
+                <h4 className="text-sm font-bold text-slate-900">Ranked Gig Compatibility</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Every inbound opportunity features an instant match score (e.g. 96% Match) with transparent skill alignment breakdowns.
+                </p>
+              </div>
 
-                            {/* Feature 3: Payment Management */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="flex flex-col md:flex-row gap-12 items-center"
-                            >
-                                <div className="md:w-1/3">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <span className="text-purple-400 font-mono text-sm">03</span>
-                                        <div className="h-px flex-1 bg-slate-700"></div>
-                                    </div>
-                                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white font-title">Payment Management</h3>
-                                    <p className="text-slate-400 leading-relaxed mb-6 font-body">Companies and talents can track milestone payments, escrow funding, and release schedules.</p>
-                                    <div className="flex items-center gap-2 text-sm text-purple-400 font-medium cursor-pointer hover:text-purple-300">
-                                        View details <ArrowRight className="w-4 h-4" />
-                                    </div>
-                                </div>
-                                <div className="md:w-2/3 w-full">
-                                    <motion.div
-                                        whileHover={{ scale: 1.02 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="w-full h-[400px] md:h-[500px] bg-slate-800 rounded-xl border border-slate-700 shadow-2xl flex flex-col items-center justify-center relative overflow-hidden group"
-                                    >
-                                        <img
-                                            src="/images/onamini-hifi-payment-mgmt.png"
-                                            alt="Payment Management UI"
-                                            className="w-full h-full object-cover object-top"
-                                        />
-                                    </motion.div>
-                                </div>
-                            </motion.div>
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#5E17EB] uppercase tracking-wider">
+                  <Layers className="w-3.5 h-3.5" /> 03. Milestone Stepper
+                </div>
+                <h4 className="text-sm font-bold text-slate-900">Zero Scope Creep</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Visual progress tracks research, hi-fi prototyping, and client reviews with automated payment triggers upon approvals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                            {/* Feature 4: Dispute Management */}
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="flex flex-col md:flex-row gap-12 items-center md:flex-row-reverse"
-                            >
-                                <div className="md:w-1/3">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <span className="text-purple-400 font-mono text-sm">04</span>
-                                        <div className="h-px flex-1 bg-slate-700"></div>
-                                    </div>
-                                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white font-title">Dispute Management</h3>
-                                    <p className="text-slate-400 leading-relaxed mb-6 font-body">A system for admins to resolve disputes between companies and talents, including evidence submission and payment adjustments.</p>
-                                    <div className="flex items-center gap-2 text-sm text-purple-400 font-medium cursor-pointer hover:text-purple-300">
-                                        View details <ArrowRight className="w-4 h-4" />
-                                    </div>
-                                </div>
-                                <div className="md:w-2/3 w-full">
-                                    <motion.div
-                                        whileHover={{ scale: 1.02 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="w-full h-[400px] md:h-[500px] bg-slate-800 rounded-xl border border-slate-700 shadow-2xl flex flex-col items-center justify-center relative overflow-hidden group"
-                                    >
-                                        <img
-                                            src="/images/onamini-hifi-dispute-mgmt.png"
-                                            alt="Dispute Management UI"
-                                            className="w-full h-full object-cover object-top"
-                                        />
-                                    </motion.div>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
+        {/* ========================================================================= */}
+        {/* 4. INTERACTIVE AI MATCHING SIMULATOR                                     */}
+        {/* ========================================================================= */}
+        <section className="container mx-auto px-4 sm:px-6 max-w-6xl mb-24">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+            <div>
+              <span className="onamini-pill mb-3">
+                <Cpu className="w-3.5 h-3.5" /> Interactive Algorithm Test
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-title">
+                The Semantic AI Matching Engine
+              </h2>
+              <p className="text-sm text-slate-600 mt-1 font-body">
+                Adjust candidate parameters below to see how Onamini calculates match suitability in real time.
+              </p>
+            </div>
 
-                {/* System Architecture */}
-                <section className="py-20 bg-slate-50 border-b border-slate-200">
-                    <div className="container mx-auto px-6 max-w-4xl text-center">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
-                            className="mb-12 md:mb-16"
-                        >
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight font-title">System Architecture</h2>
-                            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed font-body">How the AI logic flows through the platform to connect users.</p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.8 }}
-                            className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200 relative overflow-hidden"
-                        >
-                            <div className="flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
-                                <div className="bg-slate-50 border border-slate-200 p-6 rounded-xl w-full md:w-auto">
-                                    <div className="font-bold text-slate-800 mb-2">Input</div>
-                                    <div className="text-sm text-slate-500">Gig Requirements</div>
-                                    <div className="text-sm text-slate-500">Talent Profiles</div>
-                                </div>
-                                <ArrowRight className="text-slate-300 hidden md:block" />
-                                <div className="w-px h-8 bg-slate-300 md:hidden"></div>
-                                <motion.div
-                                    animate={{ boxShadow: ["0 0 0 0 rgba(94, 23, 235, 0)", "0 0 0 10px rgba(94, 23, 235, 0.1)", "0 0 0 0 rgba(94, 23, 235, 0)"] }}
-                                    transition={{ duration: 2, repeat: Infinity }}
-                                    className="bg-[#F9F4FF] border border-purple-100 p-6 rounded-xl w-full md:w-auto shadow-lg shadow-purple-100"
-                                >
-                                    <div className="flex items-center justify-center gap-2 mb-2">
-                                        <Cpu className="w-5 h-5 text-[#5E17EB]" />
-                                        <div className="font-bold text-[#5E17EB]">AI Engine</div>
-                                    </div>
-                                    <div className="text-sm text-[#5E17EB]">Matching Algorithm</div>
-                                    <div className="text-sm text-[#5E17EB]">Skill Extraction</div>
-                                </motion.div>
-                                <ArrowRight className="text-slate-300 hidden md:block" />
-                                <div className="w-px h-8 bg-slate-300 md:hidden"></div>
-                                <div className="bg-slate-50 border border-slate-200 p-6 rounded-xl w-full md:w-auto">
-                                    <div className="font-bold text-slate-800 mb-2">Output</div>
-                                    <div className="text-sm text-slate-500">Ranked Matches</div>
-                                    <div className="text-sm text-slate-500">Gig Invitations</div>
-                                </div>
-                            </div>
-                            <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-50 z-0 pointer-events-none"></div>
-                        </motion.div>
-                    </div>
-                </section>
+            <div className="inline-flex p-1 bg-slate-100 rounded-xl border border-slate-200">
+              <button
+                onClick={() => setActiveRole("talent")}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                  activeRole === "talent"
+                    ? "bg-white text-[#5E17EB] shadow-sm font-bold"
+                    : "text-slate-500 hover:text-slate-900"
+                }`}
+              >
+                Talent Perspective
+              </button>
+              <button
+                onClick={() => setActiveRole("company")}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                  activeRole === "company"
+                    ? "bg-white text-[#5E17EB] shadow-sm font-bold"
+                    : "text-slate-500 hover:text-slate-900"
+                }`}
+              >
+                Hiring Manager View
+              </button>
+            </div>
+          </div>
 
-                {/* Design System */}
-                <section className="py-20 md:py-32 bg-white">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
-                            className="mb-12 md:mb-16"
-                        >
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight font-title">Design System</h2>
-                            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed font-body">A scalable system built on healthy, fresh tones to promote trust and clarity.</p>
-                        </motion.div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={staggerContainer}
-                            >
-                                <h3 className="text-xl font-bold text-slate-900 mb-6 font-title">Color Palette</h3>
-                                <div className="space-y-4">
-                                    {[
-                                        { name: "Primary Purple", hex: "#5E17EB", bg: "bg-[#5E17EB]" },
-                                        { name: "Light Purple", hex: "#F9F4FF", bg: "bg-[#F9F4FF]" },
-                                        { name: "Soft Sky", hex: "#E0F2FE", bg: "bg-sky-100" },
-                                        { name: "Clean Slate", hex: "#F8FAFC", bg: "bg-slate-50" },
-                                        { name: "Text Charcoal", hex: "#1E293B", bg: "bg-slate-800" }
-                                    ].map((color, index) => (
-                                        <motion.div key={index} variants={fadeInUp} className="flex items-center gap-4">
-                                            <div className={`w-16 h-16 rounded-2xl shadow-sm ${color.bg} border border-slate-100`}></div>
-                                            <div>
-                                                <div className="font-bold text-slate-800">{color.name}</div>
-                                                <div className="font-mono text-slate-400 text-sm">{color.hex}</div>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                            >
-                                <h3 className="text-xl font-bold text-slate-900 mb-6 font-title">Typography & Components</h3>
-                                <div className="space-y-8">
-                                    <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                        <h1 className="text-4xl font-bold text-slate-900 mb-2 font-title">Heading XL</h1>
-                                        <h2 className="text-2xl font-bold text-slate-800 mb-2 font-title">Heading L</h2>
-                                        <p className="text-slate-600 font-body">Body text runs with a clean Inter font stack for maximum legibility at small sizes.</p>
-                                    </div>
-                                    <div className="flex flex-wrap gap-4">
-                                        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-6 py-3 bg-[#5E17EB] text-white rounded-lg font-medium shadow-lg shadow-purple-200 hover:bg-purple-700 transition-colors">Primary Action</motion.button>
-                                        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg font-medium hover:bg-slate-50 transition-colors">Secondary</motion.button>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
+          <div className="onamini-bento-card p-6 sm:p-10 border-purple-100 bg-white">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Controls */}
+              <div className="lg:col-span-7 space-y-6">
+                <div>
+                  <label className="text-xs font-mono text-slate-500 uppercase block mb-2">
+                    Primary Domain Expertise:
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {["Product Design", "Design Systems", "Fintech UX"].map((skill) => (
+                      <button
+                        key={skill}
+                        onClick={() => setSelectedSkill(skill)}
+                        className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                          selectedSkill === skill
+                            ? "bg-[#5E17EB] text-white shadow-md shadow-purple-200 font-bold"
+                            : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                        }`}
+                      >
+                        {skill}
+                      </button>
+                    ))}
+                  </div>
+                </div>
 
-                {/* Accessibility First */}
-                <section className="py-20 bg-[#F9F4FF]">
-                    <div className="container mx-auto px-6 max-w-6xl">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={fadeInUp}
-                                className="md:col-span-1"
-                            >
-                                <h2 className="text-3xl font-bold text-slate-900 mb-4 font-title">Accessibility First</h2>
-                                <p className="text-slate-600 mb-6 font-body">Ensuring the platform is usable by everyone, adhering to WCAG 2.1 AA standards.</p>
-                                <div className="flex gap-2">
-                                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#5E17EB] shadow-sm">
-                                        <Eye className="w-5 h-5" />
-                                    </div>
-                                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#5E17EB] shadow-sm">
-                                        <MousePointer2 className="w-5 h-5" />
-                                    </div>
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-100px" }}
-                                variants={staggerContainer}
-                                className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6"
-                            >
-                                <motion.div variants={fadeInUp} className="bg-white p-6 rounded-xl border border-purple-100 shadow-sm">
-                                    <div className="flex items-center gap-2 mb-2 text-purple-700 font-bold">
-                                        <Check className="w-4 h-4" /> Contrast Ratios
-                                    </div>
-                                    <p className="text-sm text-slate-500 font-body">All text meets at least 4.5:1 contrast ratio against backgrounds.</p>
-                                </motion.div>
-                                <motion.div variants={fadeInUp} className="bg-white p-6 rounded-xl border border-purple-100 shadow-sm">
-                                    <div className="flex items-center gap-2 mb-2 text-purple-700 font-bold">
-                                        <Check className="w-4 h-4" /> Keyboard Nav
-                                    </div>
-                                    <p className="text-sm text-slate-500 font-body">Full focus management and logical tab ordering throughout user flows.</p>
-                                </motion.div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-500 font-mono">Verified Experience:</span>
+                    <span className="text-slate-900 font-mono font-bold text-sm">
+                      {candidateExperience} Years (Verified Work History)
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min={1}
+                    max={8}
+                    step={1}
+                    value={candidateExperience}
+                    onChange={(e) => setCandidateExperience(Number(e.target.value))}
+                    className="w-full accent-[#5E17EB] cursor-pointer"
+                  />
+                  <div className="flex justify-between text-[11px] font-mono text-slate-400">
+                    <span>Junior (1 yr)</span>
+                    <span>Senior / Lead (8 yrs)</span>
+                  </div>
+                </div>
 
-                {/* Reflection & Next Steps */}
-                <section className="py-20 md:py-32 bg-white">
-                    <div className="container mx-auto px-6 max-w-3xl text-center">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeInUp}
-                        >
-                            <div className="w-16 h-16 bg-slate-100 rounded-full mx-auto flex items-center justify-center mb-6">
-                                <Check className="w-8 h-8 text-slate-800" />
-                            </div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 font-title">Reflection & Next Steps</h2>
-                            <p className="text-xl text-slate-600 leading-relaxed mb-10 font-body">
-                                Designing Onamini was an exercise in balancing automation with human agency. The result is a system that empowers talent to find meaningful work while giving companies the security they need to hire flexibly.
-                            </p>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-12">
-                                <div className="p-6 bg-slate-50 rounded-xl">
-                                    <h4 className="font-bold text-slate-900 mb-2 font-title">Key Learning</h4>
-                                    <p className="text-slate-600 text-sm font-body">Trust is the currency of the gig economy. Verification flows must be rigorous yet invisible.</p>
-                                </div>
-                                <div className="p-6 bg-slate-50 rounded-xl">
-                                    <h4 className="font-bold text-slate-900 mb-2 font-title">Future Improvement</h4>
-                                    <p className="text-slate-600 text-sm font-body">Expanding the AI model to suggest skill upskilling paths based on market demand.</p>
-                                </div>
-                            </div>
-                            <Link href="/work">
-                                <Button className="inline-flex items-center gap-2 px-8 py-4 h-auto bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-all hover:scale-105 shadow-xl font-title">
-                                    Back to My Work
-                                </Button>
-                            </Link>
-                        </motion.div>
-                    </div>
-                </section>
+                <div className="pt-2">
+                  <label className="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={hasEscrowProtection}
+                      onChange={(e) => setHasEscrowProtection(e.target.checked)}
+                      className="w-4 h-4 accent-[#5E17EB] rounded"
+                    />
+                    <span className="text-xs text-slate-700 font-medium">
+                      Enable Automated Milestone Escrow (+5 Trust Multiplier)
+                    </span>
+                  </label>
+                </div>
+              </div>
 
-                <ContactSection />
-            </main>
-        </div>
-    )
+              {/* Match Card Preview */}
+              <div className="lg:col-span-5 bg-gradient-to-br from-[#F9F4FF] to-white rounded-2xl p-6 border border-purple-100 shadow-md space-y-4">
+                <div className="flex items-center justify-between border-b border-purple-100 pb-3">
+                  <span className="text-xs font-mono font-bold text-[#5E17EB] uppercase">
+                    Calculated Compatibility
+                  </span>
+                  <span className="text-xs font-mono text-slate-400">Model v2.4</span>
+                </div>
+
+                <div className="flex items-baseline gap-2">
+                  <div className="text-5xl font-extrabold text-[#5E17EB] tracking-tight tnum font-title">
+                    {matchScore}%
+                  </div>
+                  <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
+                    High Compatibility
+                  </span>
+                </div>
+
+                <p className="text-xs text-slate-600 leading-relaxed font-body">
+                  Based on skill extraction from <strong>{selectedSkill}</strong>, {candidateExperience} years of verified portfolio outcomes, and automated escrow readiness.
+                </p>
+
+                <div className="p-3 bg-white rounded-xl border border-purple-100 text-xs space-y-1.5">
+                  <div className="flex justify-between text-slate-500">
+                    <span>Suggested Hourly Bracket:</span>
+                    <span className="font-bold text-slate-900">$65 — $95 / hr</span>
+                  </div>
+                  <div className="flex justify-between text-slate-500">
+                    <span>Estimated Match Velocity:</span>
+                    <span className="font-bold text-emerald-600">&lt; 8 Minutes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* 5. MULTI-ROLE ECOSYSTEM: ADMIN & PAYMENTS                                 */}
+        {/* ========================================================================= */}
+        <section className="container mx-auto px-4 sm:px-6 max-w-6xl mb-24">
+          <div className="mb-10">
+            <span className="onamini-pill mb-3">Enterprise Governance</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-title">
+              Complete Ecosystem: Admin Oversight &amp; Dispute Management
+            </h2>
+            <p className="text-base text-slate-600 mt-2 max-w-2xl font-body">
+              Enterprise platforms succeed or fail on the strength of their internal tools. We designed robust views for compliance officers and escrow managers to supervise transactions without impeding velocity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Admin Oversight Card */}
+            <div className="onamini-browser-frame">
+              <div className="onamini-browser-header">
+                <span className="text-xs font-mono text-slate-500">01. Admin Oversight Dashboard</span>
+                <span className="text-[11px] font-mono text-purple-600 font-semibold">Governance</span>
+              </div>
+              <div className="p-3 bg-slate-50">
+                <div className="rounded-xl overflow-hidden border border-slate-200 bg-white">
+                  <img
+                    src="/images/onamini-hifi-admin-oversight.png"
+                    alt="Onamini Admin Oversight UI"
+                    className="w-full h-auto object-contain block"
+                  />
+                </div>
+              </div>
+              <div className="p-5 bg-white border-t border-purple-50">
+                <h4 className="text-sm font-bold text-slate-900 mb-1">Centralized Operational Health</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Real-time visibility into active contracts, transaction volumes, user verification queues, and dispute alerts.
+                </p>
+              </div>
+            </div>
+
+            {/* Payment & Escrow Management Card */}
+            <div className="onamini-browser-frame">
+              <div className="onamini-browser-header">
+                <span className="text-xs font-mono text-slate-500">02. Escrow &amp; Payment Hub</span>
+                <span className="text-[11px] font-mono text-emerald-600 font-semibold">Financials</span>
+              </div>
+              <div className="p-3 bg-slate-50">
+                <div className="rounded-xl overflow-hidden border border-slate-200 bg-white">
+                  <img
+                    src="/images/onamini-hifi-payment-mgmt.png"
+                    alt="Onamini Payment and Escrow Management UI"
+                    className="w-full h-auto object-contain block"
+                  />
+                </div>
+              </div>
+              <div className="p-5 bg-white border-t border-purple-50">
+                <h4 className="text-sm font-bold text-slate-900 mb-1">Granular Milestone Releases</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Itemized audit trails showing when client escrow was funded, work approved, and payouts disbursed to talent.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* 6. MEASURABLE RESULTS & COMMERCIAL IMPACT                                 */}
+        {/* ========================================================================= */}
+        <section className="container mx-auto px-4 sm:px-6 max-w-6xl mb-24">
+          <div className="mb-10">
+            <span className="onamini-pill mb-3">Validation &amp; Impact</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-title">
+              Quantifiable Business Outcomes
+            </h2>
+            <p className="text-base text-slate-600 mt-1 font-body">
+              How intuitive user flows and AI matching influenced key operational metrics.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="onamini-bento-card p-6">
+              <span className="text-[11px] font-mono text-slate-400 uppercase block mb-1">
+                Match Velocity
+              </span>
+              <div className="text-4xl sm:text-5xl font-extrabold text-[#5E17EB] tracking-tight tnum mb-2 font-title">
+                +45%
+              </div>
+              <p className="text-xs text-slate-500">
+                Accelerated time-to-hire from an average of 4.2 days down to 2.3 days.
+              </p>
+            </div>
+
+            <div className="onamini-bento-card p-6">
+              <span className="text-[11px] font-mono text-slate-400 uppercase block mb-1">
+                Contract Disputes
+              </span>
+              <div className="text-4xl sm:text-5xl font-extrabold text-emerald-600 tracking-tight tnum mb-2 font-title">
+                -34%
+              </div>
+              <p className="text-xs text-slate-500">
+                Drop in client-freelancer revision disputes due to explicit milestone requirements.
+              </p>
+            </div>
+
+            <div className="onamini-bento-card p-6">
+              <span className="text-[11px] font-mono text-slate-400 uppercase block mb-1">
+                Onboarding Completion
+              </span>
+              <div className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight tnum mb-2 font-title">
+                88%
+              </div>
+              <p className="text-xs text-slate-500">
+                Talent completing full profile verification within their first 24 hours.
+              </p>
+            </div>
+
+            <div className="onamini-bento-card p-6">
+              <span className="text-[11px] font-mono text-slate-400 uppercase block mb-1">
+                Repeat Hiring Rate
+              </span>
+              <div className="text-4xl sm:text-5xl font-extrabold text-[#5E17EB] tracking-tight tnum mb-2 font-title">
+                3.1x
+              </div>
+              <p className="text-xs text-slate-500">
+                Clients commissioning second gigs within 60 days of their initial contract.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* 7. RETROSPECTIVE & NEXT STEPS                                             */}
+        {/* ========================================================================= */}
+        <section className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="onamini-bento-card p-8 sm:p-12 text-center border-purple-200 bg-gradient-to-b from-[#FAF7FF] to-white relative overflow-hidden">
+            <div className="relative z-10 max-w-2xl mx-auto space-y-6">
+              <span className="onamini-pill">
+                Looking to Build Scalable Platforms?
+              </span>
+
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight font-title">
+                Let&apos;s build intelligent, trust-first software together.
+              </h2>
+
+              <p className="text-base text-slate-600 leading-relaxed font-body">
+                Whether designing AI-driven marketplaces, fintech liquidity flows, or scalable B2B SaaS design systems, I help teams turn complexity into clarity.
+              </p>
+
+              <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
+                <a
+                  href="mailto:alexakerele24@gmail.com"
+                  className="px-6 py-3.5 rounded-full bg-[#5E17EB] text-white font-bold text-sm hover:bg-purple-700 transition-all flex items-center gap-2 shadow-lg shadow-purple-200"
+                >
+                  <Mail className="w-4 h-4" />
+                  alexakerele24@gmail.com
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/alexanderakerele"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3.5 rounded-full bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-bold text-sm transition-all flex items-center gap-2"
+                >
+                  <Linkedin className="w-4 h-4 text-[#5E17EB]" />
+                  LinkedIn Profile
+                </a>
+
+                <a
+                  href="https://www.onamini.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3.5 rounded-full bg-transparent text-slate-500 hover:text-slate-900 text-sm font-mono flex items-center gap-1.5 transition-colors"
+                >
+                  <span>onamini.com</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation to Other Projects */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-12 pt-8 border-t border-slate-200 text-sm">
+            <Link
+              href="/work/tradestack"
+              className="text-slate-500 hover:text-slate-900 flex items-center gap-2 font-mono transition-colors"
+            >
+              ← Previous: TradeStack (Fintech &amp; Crypto)
+            </Link>
+
+            <Link
+              href="/work/dammys-daycare"
+              className="text-[#5E17EB] hover:underline flex items-center gap-2 font-semibold transition-colors"
+            >
+              Next Case Study: Dammy&apos;s Daycare →
+            </Link>
+          </div>
+        </section>
+      </main>
+
+      {/* Persistent Footer */}
+      <Footer />
+    </div>
+  )
 }

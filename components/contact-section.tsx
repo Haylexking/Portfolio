@@ -18,7 +18,7 @@ export default function ContactSection() {
               Let's Create Something Great Together!
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-[#69666e] leading-relaxed max-w-2xl mx-auto font-body px-4">
-              Have a project in mind or just want to say hello? Reach out, and let's bring your ideas to life. I me
+              Have a project in mind or just want to say hello? Reach out, and let's bring your ideas to life. I am
               excited to collaborate and turn your vision into reality.
             </p>
           </div>
