@@ -501,7 +501,198 @@ export default function TradeStackCaseStudy() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 4. THE "BIOCHEMIST UX" METHODOLOGY & EXPERIMENTS                          */}
+        {/* 4. PRODUCTION UI SHOWCASE: ACTUAL APPS & MARKETING GRAPHICS              */}
+        {/* ========================================================================= */}
+        <section className="container mx-auto px-4 sm:px-6 max-w-6xl mb-24">
+          <div className="mb-10">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="ts-pill ts-pill-accent">
+                <span className="ts-pulse-dot" /> Shipped Interface System
+              </span>
+              <span className="ts-pill">Production Design Assets</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-title">
+              The Real Product: Designed for Clarity, Speed, and Zero Ambiguity
+            </h2>
+            <p className="text-base text-[#a1a1aa] mt-2 max-w-2xl font-body">
+              Every marketing asset and mobile screen was engineered around the same core design language: high-contrast tactile elements, electric-yellow feedback states, and frictionless decision paths.
+            </p>
+          </div>
+
+          {/* Primary High-Impact Marketing & Core App Bento */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 mb-8">
+            {/* Card 1: Crypto Liquidation (Span 6) */}
+            <div className="md:col-span-6 ts-card overflow-hidden flex flex-col justify-between group">
+              <div className="p-6 sm:p-8">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="ts-pill text-[#f4ff6b] bg-[#f4ff6b]/10 border-[#f4ff6b]/20">
+                    Core Action · 01
+                  </span>
+                  <span className="text-xs font-mono text-[#71717a]">Instant Liquidation</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 font-title">
+                  Convert Crypto to Cash Seamlessly
+                </h3>
+                <p className="text-xs sm:text-sm text-[#a1a1aa] leading-relaxed font-body">
+                  Zero-slip market conversion for USDT, Bitcoin, and Ethereum straight to Nigerian bank accounts via automated payment rails.
+                </p>
+              </div>
+              <div className="relative aspect-[4/5] sm:aspect-[3/3.6] w-full overflow-hidden bg-[#0c0c0f] flex items-center justify-center p-4">
+                <img
+                  src="/images/tradestack-screen-convert.png"
+                  alt="Convert Crypto to Cash Seamlessly - TradeStack Mobile UI"
+                  className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+            </div>
+
+            {/* Card 2: Gift Card Arbitrage & Exchange (Span 6) */}
+            <div className="md:col-span-6 ts-card overflow-hidden flex flex-col justify-between group">
+              <div className="p-6 sm:p-8">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="ts-pill text-cyan-400 bg-cyan-500/10 border-cyan-500/20">
+                    Core Action · 02
+                  </span>
+                  <span className="text-xs font-mono text-[#71717a]">Gift Card Hub</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 font-title">
+                  Giftcard Exchange in Nigeria
+                </h3>
+                <p className="text-xs sm:text-sm text-[#a1a1aa] leading-relaxed font-body">
+                  Instant automated redemption for Amazon, Steam, iTunes, Walmart, and Google Play cards without manual OTC middlemen.
+                </p>
+              </div>
+              <div className="relative aspect-[4/5] sm:aspect-[3/3.6] w-full overflow-hidden bg-[#0c0c0f] flex items-center justify-center p-4">
+                <img
+                  src="/images/tradestack-screen-giftcards.png"
+                  alt="Giftcard Exchange In Nigeria - TradeStack Mobile App"
+                  className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+            </div>
+
+            {/* Card 3: Utility Bills & Everyday Payments (Span 6) */}
+            <div className="md:col-span-6 ts-card overflow-hidden flex flex-col justify-between group">
+              <div className="p-6 sm:p-8">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="ts-pill text-amber-400 bg-amber-500/10 border-amber-500/20">
+                    Everyday Utility · 03
+                  </span>
+                  <span className="text-xs font-mono text-[#71717a]">Wallet Ecosystem</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 font-title">
+                  Pay Bills Directly from Your Wallet
+                </h3>
+                <p className="text-xs sm:text-sm text-[#a1a1aa] leading-relaxed font-body">
+                  Allowing users to spend crypto and gift card balances directly on electricity, airtime, data, and municipal bills with zero intermediate bank cash-out steps.
+                </p>
+              </div>
+              <div className="relative aspect-[4/5] sm:aspect-[3/3.6] w-full overflow-hidden bg-[#0c0c0f] flex items-center justify-center p-4">
+                <img
+                  src="/images/tradestack-screen-bills.png"
+                  alt="Pay Bills Directly From Your Wallet - TradeStack App"
+                  className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+            </div>
+
+            {/* Card 4: Retention, Streaks & Loyalty Engine (Span 6) */}
+            <div className="md:col-span-6 ts-card overflow-hidden flex flex-col justify-between group">
+              <div className="p-6 sm:p-8">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="ts-pill text-emerald-400 bg-emerald-500/10 border-emerald-500/20">
+                    Gamification &amp; Retention · 04
+                  </span>
+                  <span className="text-xs font-mono text-[#71717a]">Loyalty System</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 font-title">
+                  Loyalty Rewards, Streaks &amp; VIP Merch
+                </h3>
+                <p className="text-xs sm:text-sm text-[#a1a1aa] leading-relaxed font-body">
+                  Designed daily streak bonuses, spin-to-win mechanisms, and exclusive event invitations that elevated 30-day user retention by 2.4x.
+                </p>
+              </div>
+              <div className="relative aspect-[4/5] sm:aspect-[3/3.6] w-full overflow-hidden bg-[#0c0c0f] flex items-center justify-center p-4">
+                <img
+                  src="/images/tradestack-screen-rewards.png"
+                  alt="Access Loyalty Rewards And Merchandise Options - TradeStack"
+                  className="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Micro-Interaction & Execution Component Deep-Dive */}
+          <div className="ts-card p-6 sm:p-8 border-white/10">
+            <div className="mb-6">
+              <span className="ts-pill text-[#f4ff6b] bg-[#f4ff6b]/10 border-[#f4ff6b]/20 mb-2">
+                Mobile UX Primitives
+              </span>
+              <h3 className="text-xl sm:text-2xl font-bold text-white font-title">
+                Granular Component Design: On-Chain Rails &amp; Deposit Sheets
+              </h3>
+              <p className="text-xs sm:text-sm text-[#a1a1aa] mt-1 font-body">
+                Detailed views of the actual native iOS dialogs and sheets designed to eliminate human error during high-stakes transfers.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Screen 1: Dashboard Navigation */}
+              <div className="rounded-2xl bg-black/50 border border-white/5 p-4 flex flex-col justify-between">
+                <div className="aspect-[4/4.5] overflow-hidden rounded-xl bg-black/40 flex items-center justify-center p-2 mb-3">
+                  <img
+                    src="/images/tradestack-screen-dashboard.png"
+                    alt="TradeStack Dual Action Dashboard"
+                    className="max-h-full w-auto object-contain"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white mb-1">Dual-Mode Hub</h4>
+                  <p className="text-xs text-[#a1a1aa]">
+                    Quick tab toggles between personal portfolio and fast trade actions (P2P, Buy, Sell, Send).
+                  </p>
+                </div>
+              </div>
+
+              {/* Screen 2: Deposit Sheet & QR */}
+              <div className="rounded-2xl bg-black/50 border border-white/5 p-4 flex flex-col justify-between">
+                <div className="aspect-[4/4.5] overflow-hidden rounded-xl bg-black/40 flex items-center justify-center p-2 mb-3">
+                  <img
+                    src="/images/tradestack-screen-wallet-qr.png"
+                    alt="TradeStack BTC Wallet Details and Sell Dialog"
+                    className="max-h-full w-auto object-contain"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white mb-1">Contextual Action Cards</h4>
+                  <p className="text-xs text-[#a1a1aa]">
+                    Floating bottom sheets displaying network checks (BEP20 vs Native) with one-tap &quot;Sell Now&quot; overlays.
+                  </p>
+                </div>
+              </div>
+
+              {/* Screen 3: Dual Withdrawal Rail */}
+              <div className="rounded-2xl bg-black/50 border border-white/5 p-4 flex flex-col justify-between">
+                <div className="aspect-[4/4.5] overflow-hidden rounded-xl bg-black/40 flex items-center justify-center p-2 mb-3">
+                  <img
+                    src="/images/tradestack-screen-withdrawal.png"
+                    alt="TradeStack On-Chain Withdrawal and Internal Transfer"
+                    className="max-h-full w-auto object-contain"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white mb-1">Smart Rail Routing</h4>
+                  <p className="text-xs text-[#a1a1aa]">
+                    Explicit distinction between standard external on-chain withdrawals and zero-fee internal TradeStack transfers.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* 5. THE "BIOCHEMIST UX" METHODOLOGY & EXPERIMENTS                          */}
         {/* ========================================================================= */}
         <section className="container mx-auto px-4 sm:px-6 max-w-6xl mb-24">
           <div className="mb-10">
@@ -573,7 +764,7 @@ export default function TradeStackCaseStudy() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 5. MEASURABLE RESULTS & COMMERCIAL IMPACT                                 */}
+        {/* 6. MEASURABLE RESULTS & COMMERCIAL IMPACT                                 */}
         {/* ========================================================================= */}
         <section className="container mx-auto px-4 sm:px-6 max-w-6xl mb-24">
           <div className="mb-10">
@@ -655,7 +846,7 @@ export default function TradeStackCaseStudy() {
         </section>
 
         {/* ========================================================================= */}
-        {/* 6. RETROSPECTIVE & CRAFT LESSONS                                          */}
+        {/* 7. RETROSPECTIVE & CRAFT LESSONS                                          */}
         {/* ========================================================================= */}
         <section className="container mx-auto px-4 sm:px-6 max-w-6xl mb-24">
           <div className="mb-10">
