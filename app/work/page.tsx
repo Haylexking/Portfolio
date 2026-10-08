@@ -17,7 +17,7 @@ const projectsData = [
     link: "/work/tradestack",
     linkText: "View Case Study ↗",
     emo: "⚡",
-    img: "/images/tradestack-mockup.png",
+    img: "/images/tradestack-screen-convert.png",
     cats: ["case-study", "web", "mobile", "fintech"],
     size: "pc-xl"
   },

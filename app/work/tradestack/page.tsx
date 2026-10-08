@@ -125,20 +125,108 @@ export default function TradeStackCaseStudy() {
             </a>
           </div>
 
-          {/* Hero Hero Image & Visual Proof */}
-          <div className="ts-card overflow-hidden p-2 sm:p-3 border-white/10 shadow-2xl relative">
-            <div className="aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden bg-[#101014] relative">
-              <img
-                src="/images/tradestack-mockup.png"
-                alt="TradeStack iOS and Web Multi-Device Interface"
-                className="w-full h-full object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-transparent to-transparent opacity-60" />
-              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex items-center gap-2">
+          {/* Hero Native Product Showcase (Real Shipped Screens) */}
+          <div className="ts-card overflow-hidden p-4 sm:p-8 border-white/10 shadow-2xl relative bg-gradient-to-b from-[#141419] to-[#09090c]">
+            {/* Ambient Background Glows */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-[#f4ff6b]/10 blur-3xl pointer-events-none rounded-full" />
+            <div className="absolute bottom-0 left-1/4 w-96 h-48 bg-emerald-500/5 blur-3xl pointer-events-none rounded-full" />
+
+            {/* Header Brand Bar inside Hero */}
+            <div className="relative z-10 flex flex-wrap items-center justify-between pb-6 mb-6 border-b border-white/5 gap-4">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/images/tradestack-logo.svg"
+                  alt="TradeStack Logo"
+                  className="h-6 w-auto"
+                />
+                <span className="hidden sm:inline-block text-xs font-mono text-[#71717a] border-l border-white/10 pl-3">
+                  Production Design System &amp; Mobile UI
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
                 <span className="ts-pill ts-pill-accent bg-[#08080a]/80 backdrop-blur-md">
                   <span className="ts-pulse-dot" />
-                  Live in Production on App Store &amp; Google Play
+                  Live Shipped Screens
                 </span>
+              </div>
+            </div>
+
+            {/* Triple Native Mobile Showcase Stage */}
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-center pt-2 pb-4">
+              {/* Left Screen: Gift Card Hub */}
+              <div className="hidden md:block md:col-span-3 transition-transform duration-300 hover:scale-[1.02]">
+                <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0e0e12] p-2.5 shadow-xl">
+                  <div className="rounded-xl overflow-hidden aspect-[9/16] bg-black">
+                    <img
+                      src="/images/tradestack-screen-giftcards.png"
+                      alt="TradeStack Giftcard Redemption Hub"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="pt-2 px-1 text-center">
+                    <span className="text-[11px] font-mono text-[#a1a1aa] block font-semibold">Giftcard Exchange</span>
+                    <span className="text-[10px] text-[#71717a]">Instant OTC Automation</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Center Screen: Core Liquidation Hero (Elevated & Prominent) */}
+              <div className="col-span-1 md:col-span-6 transition-transform duration-300 hover:scale-[1.01]">
+                <div className="rounded-3xl overflow-hidden border-2 border-[#f4ff6b]/40 bg-[#121217] p-3 sm:p-4 shadow-2xl ring-4 ring-[#f4ff6b]/10">
+                  <div className="rounded-2xl overflow-hidden aspect-[9/15.5] bg-black relative">
+                    <img
+                      src="/images/tradestack-screen-convert.png"
+                      alt="TradeStack Convert Crypto to Cash"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="pt-3 px-2 flex items-center justify-between">
+                    <div>
+                      <span className="text-xs font-bold text-white block">Instant Liquidation Engine</span>
+                      <span className="text-[11px] text-[#a1a1aa] font-mono">Zero-Slip Crypto to Naira</span>
+                    </div>
+                    <span className="ts-pill text-black bg-[#f4ff6b] font-bold border-none text-[10px]">
+                      Core Flow
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Screen: Bills & Utilities */}
+              <div className="hidden md:block md:col-span-3 transition-transform duration-300 hover:scale-[1.02]">
+                <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0e0e12] p-2.5 shadow-xl">
+                  <div className="rounded-xl overflow-hidden aspect-[9/16] bg-black">
+                    <img
+                      src="/images/tradestack-screen-bills.png"
+                      alt="TradeStack Direct Bills Payment"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="pt-2 px-1 text-center">
+                    <span className="text-[11px] font-mono text-[#a1a1aa] block font-semibold">Wallet Utility</span>
+                    <span className="text-[10px] text-[#71717a]">Direct Airtime &amp; Bills</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile-only switcher helper */}
+            <div className="md:hidden grid grid-cols-2 gap-3 pt-3">
+              <div className="rounded-xl overflow-hidden border border-white/10 bg-[#0e0e12] p-2">
+                <img
+                  src="/images/tradestack-screen-giftcards.png"
+                  alt="TradeStack Giftcard"
+                  className="w-full aspect-[9/16] object-cover rounded-lg"
+                />
+                <span className="text-[10px] font-mono text-[#a1a1aa] text-center block pt-1">Giftcards</span>
+              </div>
+              <div className="rounded-xl overflow-hidden border border-white/10 bg-[#0e0e12] p-2">
+                <img
+                  src="/images/tradestack-screen-bills.png"
+                  alt="TradeStack Bills"
+                  className="w-full aspect-[9/16] object-cover rounded-lg"
+                />
+                <span className="text-[10px] font-mono text-[#a1a1aa] text-center block pt-1">Bills &amp; Utility</span>
               </div>
             </div>
           </div>
