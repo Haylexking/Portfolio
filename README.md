@@ -1,8 +1,18 @@
-# Alexander Akerele — AI First Product Designer and Front End Developer
+<div align="center">
 
-> Bridging product strategy, high craft visual design, and working code with AI native velocity.
+# Alexander Akerele
+### AI First Product Designer and Front End Developer
 
-[Insert Screenshot: Hero Showcase or Portfolio Banner]
+Bridging product strategy, high craft visual design, and working code with AI native velocity.
+
+[![Portfolio](https://img.shields.io/badge/Live_Portfolio-portfolio--eight--rho--87.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-eight-rho-87.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Haylexking-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Haylexking)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-alexanderakerele-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alexanderakerele)
+[![Email](https://img.shields.io/badge/Email-alexakerele24%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:alexakerele24@gmail.com)
+
+</div>
+
+<br/>
 
 I am an AI First Product Designer and Front End Developer who transforms ambiguous product briefs into testable, production ready digital experiences. Instead of stopping at static Figma canvas mockups or protracted handoff cycles, I leverage modern AI acceleration tools such as Cursor, v0, Claude, Gemini, and live model APIs to explore wide conceptual directions, synthesize user research, build design systems, and ship clean React and TypeScript interfaces.
 
@@ -10,7 +20,7 @@ My background in biochemistry gives me an empirical, hypothesis driven perspecti
 
 ---
 
-## My AI Design and Development Workflow
+## ⚡ My AI Design and Development Workflow
 
 I do not treat AI as a superficial shortcut for generic templates. I integrate AI agents and models across every layer of the product lifecycle:
 
@@ -22,11 +32,9 @@ I do not treat AI as a superficial shortcut for generic templates. I integrate A
 
 ---
 
-## Featured Projects (Mini Case Studies)
+## 🚀 Featured Projects
 
 ### 1. ATS System Checker — AI Powered Resume and Job Description Matcher
-
-[Insert Screenshot: ATS System Checker Interface and Match Breakdown]
 
 #### The Problem
 Job candidates face massive rejection anxiety when applying for technical and product roles because traditional applicant tracking systems parse resumes through unforgiving keyword filters without providing actionable context. Candidates are left guessing why their resumes fail to secure interviews, while recruiters struggle through unstructured, poor quality submissions.
@@ -45,14 +53,12 @@ Job candidates face massive rejection anxiety when applying for technical and pr
 #### The Outcome
 Delivered an interactive, self serve ATS diagnostic engine that delivers deep semantic feedback in under eight seconds, empowering job seekers to iterate on their applications with real time clarity.
 
-- **Live Demo:** [Insert Link: ATS System Checker Live Demo]
-- **Source Code:** [https://github.com/Haylexking/ats-resume-engine](https://github.com/Haylexking/ats-resume-engine)
+- 🔗 **Live Demo:** [https://portfolio-eight-rho-87.vercel.app/work/ats](https://portfolio-eight-rho-87.vercel.app/work/ats)
+- 💻 **Source Code:** [https://github.com/Haylexking/ats-resume-engine](https://github.com/Haylexking/ats-resume-engine)
 
 ---
 
 ### 2. Moooves Game — Interactive Real Time Multiplayer Social Game
-
-[Insert Screenshot: Moooves Real Time Multiplayer Game Board and Mobile Controls]
 
 #### The Problem
 Digital party games and physical trivia sessions often suffer from clumsy mobile onboarding, connection dropouts, latency lag, and awkward host participant coordination. The challenge was to design a snappy, responsive web first game where players can join effortlessly via their smartphones with zero app installation, while enjoying real time synchronized feedback.
@@ -70,14 +76,12 @@ Digital party games and physical trivia sessions often suffer from clumsy mobile
 #### The Outcome
 Shipped a high energy real time party game featuring instant room discovery, sub hundred millisecond response times, and an interface that scales fluidly from small smartphones to large living room display screens.
 
-- **Live Demo:** [Insert Link: Moooves Game Live Demo]
-- **Source Code:** [https://github.com/Haylexking/moooves](https://github.com/Haylexking/moooves)
+- 🔗 **Live Demo:** [https://moooves-test.vercel.app/](https://moooves-test.vercel.app/)
+- 💻 **Source Code:** [https://github.com/Haylexking/moooves](https://github.com/Haylexking/moooves)
 
 ---
 
 ### 3. Dammycare (Dammy's Daycare) — Trust First Childcare Platform
-
-[Insert Screenshot: Dammycare Responsive Landing Page and Tour Booking Experience]
 
 #### The Problem
 Selecting early childhood care is an emotionally charged, high friction decision for working parents. Most childcare websites are clunky, static, and text heavy, failing to alleviate safety anxieties or clarify daily curriculums, educator credentials, and admission steps.
@@ -95,14 +99,12 @@ Selecting early childhood care is an emotionally charged, high friction decision
 #### The Outcome
 Transformed a standard business site into a conversion focused, trust centered web experience that simplifies parent inquiry, validates accreditation, and elevates enrollment inquiries.
 
-- **Live Demo:** [Insert Link: Dammycare Live Demo]
-- **Source Code:** [https://github.com/Haylexking/dammysdaycare](https://github.com/Haylexking/dammysdaycare)
+- 🔗 **Live Demo:** [https://dammysdaycare.vercel.app/](https://dammysdaycare.vercel.app/)
+- 💻 **Source Code:** [https://github.com/Haylexking/dammysdaycare](https://github.com/Haylexking/dammysdaycare)
 
 ---
 
 ### 4. Ondomoi (Ondo State Ministry of Information) — GovTech Transparency Portal
-
-[Insert Screenshot: Ondomoi Ministry Directory and News Portal]
 
 #### The Problem
 Public sector government websites in developing regions often struggle with broken layouts, outdated personnel records, generic placeholder assets, and confusing bureaucratic hierarchies, causing citizens and journalists to distrust public communications.
@@ -120,12 +122,12 @@ Public sector government websites in developing regions often struggle with brok
 #### The Outcome
 Engineered a modern, reliable, and authentic government communication platform with fourteen validated production routes, zero placeholder artifacts, and seamless accessibility across desktop and mobile browsers.
 
-- **Live Demo:** [Insert Link: Ondomoi Live Demo]
-- **Source Code:** [https://github.com/Haylexking/ondo-moi](https://github.com/Haylexking/ondo-moi)
+- 🔗 **Live Demo:** [https://ondo-moi.vercel.app/](https://ondo-moi.vercel.app/)
+- 💻 **Source Code:** [https://github.com/Haylexking/ondo-moi](https://github.com/Haylexking/ondo-moi)
 
 ---
 
-## Tech Stack and AI Tools
+## 🛠️ Tech Stack and AI Tools
 
 ### AI Native Design and Prototyping
 - **Cursor:** Primary AI first code editor for rapid React TypeScript implementation, agentic refactoring, and component assembly.
@@ -141,9 +143,9 @@ Engineered a modern, reliable, and authentic government communication platform w
 
 ---
 
-## Contact and Links
+## 📬 Contact and Links
 
-- **Portfolio Website:** [https://portfolio-eight-rho-87.vercel.app/](https://portfolio-eight-rho-87.vercel.app/)
-- **GitHub:** [https://github.com/Haylexking](https://github.com/Haylexking)
-- **LinkedIn:** [https://www.linkedin.com/in/alexanderakerele](https://www.linkedin.com/in/alexanderakerele)
-- **Email:** [alexakerele24@gmail.com](mailto:alexakerele24@gmail.com)
+- 🌐 **Portfolio Website:** [https://portfolio-eight-rho-87.vercel.app/](https://portfolio-eight-rho-87.vercel.app/)
+- 💻 **GitHub:** [https://github.com/Haylexking](https://github.com/Haylexking)
+- 💼 **LinkedIn:** [https://www.linkedin.com/in/alexanderakerele](https://www.linkedin.com/in/alexanderakerele)
+- ✉️ **Email:** [alexakerele24@gmail.com](mailto:alexakerele24@gmail.com)
